@@ -111,14 +111,14 @@
   <meta name="description" content="檢查歷史紀錄$ git log  commit afe36485cb94078a1ba9a7377398247e4d181765 (HEAD -&amp;gt; master) Author: liangsmfish &amp;lt;007liang7@gmail.com&amp;gt; Date:   Mon Dec 10 01:05:06 2018 +0800      add indexs  commit db2a">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git (2) 進階git操作(log )">
+<meta property="og:title" content="Git (2) 進階git操作">
 <meta property="og:url" content="http://yoursite.com/2019/02/11/git(2)/index.html">
 <meta property="og:site_name" content="Liang &#39;s blog">
 <meta property="og:description" content="檢查歷史紀錄$ git log  commit afe36485cb94078a1ba9a7377398247e4d181765 (HEAD -&amp;gt; master) Author: liangsmfish &amp;lt;007liang7@gmail.com&amp;gt; Date:   Mon Dec 10 01:05:06 2018 +0800      add indexs  commit db2a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-11T13:36:37.681Z">
+<meta property="og:updated_time" content="2019-02-11T14:11:31.309Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git (2) 進階git操作(log )">
+<meta name="twitter:title" content="Git (2) 進階git操作">
 <meta name="twitter:description" content="檢查歷史紀錄$ git log  commit afe36485cb94078a1ba9a7377398247e4d181765 (HEAD -&amp;gt; master) Author: liangsmfish &amp;lt;007liang7@gmail.com&amp;gt; Date:   Mon Dec 10 01:05:06 2018 +0800      add indexs  commit db2a">
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Git (2) 進階git操作(log ) | Liang 's blog</title>
+  <title>Git (2) 進階git操作 | Liang 's blog</title>
   
 
 
@@ -373,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git (2) 進階git操作(log )
+          <h1 class="post-title" itemprop="name headline">Git (2) 進階git操作
               
             
           </h1>
@@ -398,7 +398,7 @@
                 
               
 
-              <time title="Created: 2019-02-11 20:49:02 / Modified: 21:36:37" itemprop="dateCreated datePublished" datetime="2019-02-11T20:49:02+08:00">2019-02-11</time>
+              <time title="Created: 2019-02-11 20:49:02 / Modified: 22:11:31" itemprop="dateCreated datePublished" datetime="2019-02-11T20:49:02+08:00">2019-02-11</time>
             
 
             
@@ -520,9 +520,63 @@ $ git commit --amend --no-edit
 </code></pre>
 <p>這樣就可以把檔案併入最後一次的 Commit</p>
 <h1 id="新增目錄"><a href="#新增目錄" class="headerlink" title="新增目錄"></a>新增目錄</h1><p>git 不接受空目錄，所以要隨便初始一個空檔案</p>
-<pre><code class="bash">$ mkdir pic
+<pre><code class="bash">
+$ mkdir pic
 
 $ touch pic/.gitkeep
+
+</code></pre>
+<h1 id="過濾檔案進入Git"><a href="#過濾檔案進入Git" class="headerlink" title="過濾檔案進入Git"></a>過濾檔案進入Git</h1><p>建立一個 .gitignore 規則檔案</p>
+<pre><code class="bash">
+$ touch .gitignore
+
+</code></pre>
+<p>然後編輯 gitignore</p>
+<pre><code class="bash"><span class="comment"># 忽略單一檔案</span>
+
+secret.txt
+
+<span class="comment"># 忽略所有副檔名是 .tmp 的檔案</span>
+
+*.tmp
+
+</code></pre>
+<p>強迫闖關(無視規則)</p>
+<pre><code class="bash">
+$ git add -f 檔案名稱
+
+</code></pre>
+<p>原住民處理(在規則建立前存在者)</p>
+<pre><code class="bash">$ git rm secret.txt --cached <span class="comment">#脫離Git 控管</span>
+
+$ git clean -fX <span class="comment">#全部清除</span>
+</code></pre>
+<h1 id="檢視特定檔案的-Commit-紀錄"><a href="#檢視特定檔案的-Commit-紀錄" class="headerlink" title="檢視特定檔案的 Commit 紀錄"></a>檢視特定檔案的 Commit 紀錄</h1><pre><code class="bash">
+$ git <span class="built_in">log</span> test.html
+
+$ git <span class="built_in">log</span> test.html -p <span class="comment">#顯示每次commit的修改內容</span>
+</code></pre>
+<h1 id="檢查程式碼的作者"><a href="#檢查程式碼的作者" class="headerlink" title="檢查程式碼的作者"></a>檢查程式碼的作者</h1><pre><code class="bash">
+$ git blame index.html
+
+$ git blame -L 5,10 index.html <span class="comment">#顯示5~10行的範圍</span>
+
+</code></pre>
+<h1 id="復活檔案"><a href="#復活檔案" class="headerlink" title="復活檔案"></a>復活檔案</h1><pre><code class="bash">
+$ rm *.html
+
+$ git status
+
+On branch master
+Changes not staged <span class="keyword">for</span> commit:
+  (use <span class="string">"git add/rm &lt;file&gt;..."</span> to update what will be committed)
+  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="keyword">in</span> working directory)
+
+    deleted:    test.html
+
+$ git checkout test.html
+
+$ git checkout . <span class="comment">#全體復活</span>
 
 </code></pre>
 
@@ -760,7 +814,7 @@ $ touch pic/.gitkeep
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#檢查歷史紀錄"><span class="nav-number">1.</span> <span class="nav-text">檢查歷史紀錄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#條件過濾搜尋"><span class="nav-number">2.</span> <span class="nav-text">條件過濾搜尋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改與刪除檔案"><span class="nav-number">3.</span> <span class="nav-text">修改與刪除檔案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改-Commit-紀錄"><span class="nav-number">4.</span> <span class="nav-text">修改 Commit 紀錄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#追加檔案到最近一次的-Commit"><span class="nav-number">5.</span> <span class="nav-text">追加檔案到最近一次的 Commit</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新增目錄"><span class="nav-number">6.</span> <span class="nav-text">新增目錄</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#檢查歷史紀錄"><span class="nav-number">1.</span> <span class="nav-text">檢查歷史紀錄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#條件過濾搜尋"><span class="nav-number">2.</span> <span class="nav-text">條件過濾搜尋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改與刪除檔案"><span class="nav-number">3.</span> <span class="nav-text">修改與刪除檔案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改-Commit-紀錄"><span class="nav-number">4.</span> <span class="nav-text">修改 Commit 紀錄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#追加檔案到最近一次的-Commit"><span class="nav-number">5.</span> <span class="nav-text">追加檔案到最近一次的 Commit</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新增目錄"><span class="nav-number">6.</span> <span class="nav-text">新增目錄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#過濾檔案進入Git"><span class="nav-number">7.</span> <span class="nav-text">過濾檔案進入Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#檢視特定檔案的-Commit-紀錄"><span class="nav-number">8.</span> <span class="nav-text">檢視特定檔案的 Commit 紀錄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#檢查程式碼的作者"><span class="nav-number">9.</span> <span class="nav-text">檢查程式碼的作者</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#復活檔案"><span class="nav-number">10.</span> <span class="nav-text">復活檔案</span></a></li></ol></div>
             
 
           </div>

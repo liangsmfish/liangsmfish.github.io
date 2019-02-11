@@ -372,7 +372,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/11/git(2)/" class="post-title-link" itemprop="http://yoursite.com/index.html">Git (2) 進階git操作(log )</a>
+                <a href="/2019/02/11/git(2)/" class="post-title-link" itemprop="http://yoursite.com/index.html">Git (2) 進階git操作</a>
               
             
           </h1>
@@ -397,7 +397,7 @@
                 
               
 
-              <time title="Created: 2019-02-11 20:49:02 / Modified: 21:36:37" itemprop="dateCreated datePublished" datetime="2019-02-11T20:49:02+08:00">2019-02-11</time>
+              <time title="Created: 2019-02-11 20:49:02 / Modified: 22:11:31" itemprop="dateCreated datePublished" datetime="2019-02-11T20:49:02+08:00">2019-02-11</time>
             
 
             
@@ -521,9 +521,63 @@ $ git commit --amend --no-edit
 </code></pre>
 <p>這樣就可以把檔案併入最後一次的 Commit</p>
 <h1 id="新增目錄"><a href="#新增目錄" class="headerlink" title="新增目錄"></a>新增目錄</h1><p>git 不接受空目錄，所以要隨便初始一個空檔案</p>
-<pre><code class="bash">$ mkdir pic
+<pre><code class="bash">
+$ mkdir pic
 
 $ touch pic/.gitkeep
+
+</code></pre>
+<h1 id="過濾檔案進入Git"><a href="#過濾檔案進入Git" class="headerlink" title="過濾檔案進入Git"></a>過濾檔案進入Git</h1><p>建立一個 .gitignore 規則檔案</p>
+<pre><code class="bash">
+$ touch .gitignore
+
+</code></pre>
+<p>然後編輯 gitignore</p>
+<pre><code class="bash"><span class="comment"># 忽略單一檔案</span>
+
+secret.txt
+
+<span class="comment"># 忽略所有副檔名是 .tmp 的檔案</span>
+
+*.tmp
+
+</code></pre>
+<p>強迫闖關(無視規則)</p>
+<pre><code class="bash">
+$ git add -f 檔案名稱
+
+</code></pre>
+<p>原住民處理(在規則建立前存在者)</p>
+<pre><code class="bash">$ git rm secret.txt --cached <span class="comment">#脫離Git 控管</span>
+
+$ git clean -fX <span class="comment">#全部清除</span>
+</code></pre>
+<h1 id="檢視特定檔案的-Commit-紀錄"><a href="#檢視特定檔案的-Commit-紀錄" class="headerlink" title="檢視特定檔案的 Commit 紀錄"></a>檢視特定檔案的 Commit 紀錄</h1><pre><code class="bash">
+$ git <span class="built_in">log</span> test.html
+
+$ git <span class="built_in">log</span> test.html -p <span class="comment">#顯示每次commit的修改內容</span>
+</code></pre>
+<h1 id="檢查程式碼的作者"><a href="#檢查程式碼的作者" class="headerlink" title="檢查程式碼的作者"></a>檢查程式碼的作者</h1><pre><code class="bash">
+$ git blame index.html
+
+$ git blame -L 5,10 index.html <span class="comment">#顯示5~10行的範圍</span>
+
+</code></pre>
+<h1 id="復活檔案"><a href="#復活檔案" class="headerlink" title="復活檔案"></a>復活檔案</h1><pre><code class="bash">
+$ rm *.html
+
+$ git status
+
+On branch master
+Changes not staged <span class="keyword">for</span> commit:
+  (use <span class="string">"git add/rm &lt;file&gt;..."</span> to update what will be committed)
+  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="keyword">in</span> working directory)
+
+    deleted:    test.html
+
+$ git checkout test.html
+
+$ git checkout . <span class="comment">#全體復活</span>
 
 </code></pre>
 
@@ -627,7 +681,7 @@ $ touch pic/.gitkeep
                 
               
 
-              <time title="Created: 2019-02-11 19:10:30 / Modified: 21:11:03" itemprop="dateCreated datePublished" datetime="2019-02-11T19:10:30+08:00">2019-02-11</time>
+              <time title="Created: 2019-02-11 19:10:30 / Modified: 21:39:16" itemprop="dateCreated datePublished" datetime="2019-02-11T19:10:30+08:00">2019-02-11</time>
             
 
             
@@ -685,14 +739,18 @@ $ touch pic/.gitkeep
       
         
           
-            <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><pre><code class="bash"><span class="built_in">cd</span> 至欲交給git版控的目錄
+            <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><pre><code class="bash">
+<span class="built_in">cd</span> 至欲交給git版控的目錄
+
 $ git init
+
 </code></pre>
 <p>PS. 若想脫離git版控，把.git目錄砍掉即可</p>
 <h1 id="把檔案交給-Git"><a href="#把檔案交給-Git" class="headerlink" title="把檔案交給 Git"></a>把檔案交給 Git</h1><p>可以先檢查此目錄的狀態</p>
-<pre><code class="bash">$ git status
-<span class="comment"># 如果是空的</span>
+<pre><code class="bash">
+$ git status
 
+<span class="comment"># 如果是空的</span>
 On branch master
 
 Initial commit
@@ -700,7 +758,6 @@ Initial commit
 nothing to commit (create/copy files and use <span class="string">"git add"</span> to track)
 
 <span class="comment"># 如果裡面只有 test.html</span>
-
 On branch master
 
 Initial commit
@@ -712,10 +769,13 @@ nothing added to commit but untracked files present (use <span class="string">"g
 
 </code></pre>
 <p>把untracked files交給Git</p>
-<pre><code class="bash">$ git add test.html
+<pre><code class="bash">
+$ git add test.html
+
 </code></pre>
 <p>完成後再檢查一次目前的狀態</p>
-<pre><code class="bash">$ git status
+<pre><code class="bash">
+$ git status
 On branch master
 
 Initial commit
@@ -724,14 +784,18 @@ Changes to be committed:
   (use <span class="string">"git rm --cached &lt;file&gt;..."</span> to unstage)
 
     new file:   test.html
+
 </code></pre>
 <p>PS. 若add test.html 後又做了修改，需要再重新add 一次</p>
 <p><strong><code>add .</code> </strong> vs <strong><code>add --all</code></strong></p>
 <p><code>git add .</code> 這個指令會把目前當下這個目錄以下的所有子目錄裡的異動全部加到暫存區，但在這個目錄的以外的就不歸它管了。<br><code>git add --all</code> 這個指令不管在專案的哪一層目錄執行，在這個專案裡所有的異動都會被加至暫存區。</p>
-<h1 id="把暫存區的內容提交到倉庫裡存檔"><a href="#把暫存區的內容提交到倉庫裡存檔" class="headerlink" title="把暫存區的內容提交到倉庫裡存檔"></a>把暫存區的內容提交到倉庫裡存檔</h1><pre><code class="bash">$ git commit -m <span class="string">"我們在這次commit做了什麼事情"</span>
+<h1 id="把暫存區的內容提交到倉庫裡存檔"><a href="#把暫存區的內容提交到倉庫裡存檔" class="headerlink" title="把暫存區的內容提交到倉庫裡存檔"></a>把暫存區的內容提交到倉庫裡存檔</h1><pre><code class="bash">
+$ git commit -m <span class="string">"我們在這次commit做了什麼事情"</span>
+
 [master (root-commit) dfccf0c] init commit
  1 file changed, 1 insertion(+)
  create mode 100644 test.html
+
 </code></pre>
 <h1 id="工作區、暫存區與儲存庫"><a href="#工作區、暫存區與儲存庫" class="headerlink" title="工作區、暫存區與儲存庫"></a>工作區、暫存區與儲存庫</h1><p>圖示 </p>
 <p><img src="https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20190211/1.jpg" alt="1"></p>

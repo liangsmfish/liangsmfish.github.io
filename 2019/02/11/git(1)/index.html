@@ -108,19 +108,19 @@
 
 
 
-  <meta name="description" content="初始化cd 至欲交給git版控的目錄 $ git init  PS. 若想脫離git版控，把.git目錄砍掉即可 把檔案交給 Git可以先檢查此目錄的狀態 $ git status # 如果是空的  On branch master  Initial commit  nothing to commit (create/copy files and use &quot;git add&quot; to track)">
+  <meta name="description" content="初始化 cd 至欲交給git版控的目錄  $ git init   PS. 若想脫離git版控，把.git目錄砍掉即可 把檔案交給 Git可以先檢查此目錄的狀態  $ git status  # 如果是空的 On branch master  Initial commit  nothing to commit (create/copy files and use &quot;git add&quot; to trac">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git (1) 開始使用git(init,add,commit)">
 <meta property="og:url" content="http://yoursite.com/2019/02/11/git(1)/index.html">
 <meta property="og:site_name" content="Liang &#39;s blog">
-<meta property="og:description" content="初始化cd 至欲交給git版控的目錄 $ git init  PS. 若想脫離git版控，把.git目錄砍掉即可 把檔案交給 Git可以先檢查此目錄的狀態 $ git status # 如果是空的  On branch master  Initial commit  nothing to commit (create/copy files and use &quot;git add&quot; to track)">
+<meta property="og:description" content="初始化 cd 至欲交給git版控的目錄  $ git init   PS. 若想脫離git版控，把.git目錄砍掉即可 把檔案交給 Git可以先檢查此目錄的狀態  $ git status  # 如果是空的 On branch master  Initial commit  nothing to commit (create/copy files and use &quot;git add&quot; to trac">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20190211/1.jpg">
-<meta property="og:updated_time" content="2019-02-11T13:11:03.348Z">
+<meta property="og:updated_time" content="2019-02-11T13:39:16.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git (1) 開始使用git(init,add,commit)">
-<meta name="twitter:description" content="初始化cd 至欲交給git版控的目錄 $ git init  PS. 若想脫離git版控，把.git目錄砍掉即可 把檔案交給 Git可以先檢查此目錄的狀態 $ git status # 如果是空的  On branch master  Initial commit  nothing to commit (create/copy files and use &quot;git add&quot; to track)">
+<meta name="twitter:description" content="初始化 cd 至欲交給git版控的目錄  $ git init   PS. 若想脫離git版控，把.git目錄砍掉即可 把檔案交給 Git可以先檢查此目錄的狀態  $ git status  # 如果是空的 On branch master  Initial commit  nothing to commit (create/copy files and use &quot;git add&quot; to trac">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20190211/1.jpg">
 
 
@@ -400,7 +400,7 @@
                 
               
 
-              <time title="Created: 2019-02-11 19:10:30 / Modified: 21:11:03" itemprop="dateCreated datePublished" datetime="2019-02-11T19:10:30+08:00">2019-02-11</time>
+              <time title="Created: 2019-02-11 19:10:30 / Modified: 21:39:16" itemprop="dateCreated datePublished" datetime="2019-02-11T19:10:30+08:00">2019-02-11</time>
             
 
             
@@ -456,14 +456,18 @@
       
 
       
-        <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><pre><code class="bash"><span class="built_in">cd</span> 至欲交給git版控的目錄
+        <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><pre><code class="bash">
+<span class="built_in">cd</span> 至欲交給git版控的目錄
+
 $ git init
+
 </code></pre>
 <p>PS. 若想脫離git版控，把.git目錄砍掉即可</p>
 <h1 id="把檔案交給-Git"><a href="#把檔案交給-Git" class="headerlink" title="把檔案交給 Git"></a>把檔案交給 Git</h1><p>可以先檢查此目錄的狀態</p>
-<pre><code class="bash">$ git status
-<span class="comment"># 如果是空的</span>
+<pre><code class="bash">
+$ git status
 
+<span class="comment"># 如果是空的</span>
 On branch master
 
 Initial commit
@@ -471,7 +475,6 @@ Initial commit
 nothing to commit (create/copy files and use <span class="string">"git add"</span> to track)
 
 <span class="comment"># 如果裡面只有 test.html</span>
-
 On branch master
 
 Initial commit
@@ -483,10 +486,13 @@ nothing added to commit but untracked files present (use <span class="string">"g
 
 </code></pre>
 <p>把untracked files交給Git</p>
-<pre><code class="bash">$ git add test.html
+<pre><code class="bash">
+$ git add test.html
+
 </code></pre>
 <p>完成後再檢查一次目前的狀態</p>
-<pre><code class="bash">$ git status
+<pre><code class="bash">
+$ git status
 On branch master
 
 Initial commit
@@ -495,14 +501,18 @@ Changes to be committed:
   (use <span class="string">"git rm --cached &lt;file&gt;..."</span> to unstage)
 
     new file:   test.html
+
 </code></pre>
 <p>PS. 若add test.html 後又做了修改，需要再重新add 一次</p>
 <p><strong><code>add .</code> </strong> vs <strong><code>add --all</code></strong></p>
 <p><code>git add .</code> 這個指令會把目前當下這個目錄以下的所有子目錄裡的異動全部加到暫存區，但在這個目錄的以外的就不歸它管了。<br><code>git add --all</code> 這個指令不管在專案的哪一層目錄執行，在這個專案裡所有的異動都會被加至暫存區。</p>
-<h1 id="把暫存區的內容提交到倉庫裡存檔"><a href="#把暫存區的內容提交到倉庫裡存檔" class="headerlink" title="把暫存區的內容提交到倉庫裡存檔"></a>把暫存區的內容提交到倉庫裡存檔</h1><pre><code class="bash">$ git commit -m <span class="string">"我們在這次commit做了什麼事情"</span>
+<h1 id="把暫存區的內容提交到倉庫裡存檔"><a href="#把暫存區的內容提交到倉庫裡存檔" class="headerlink" title="把暫存區的內容提交到倉庫裡存檔"></a>把暫存區的內容提交到倉庫裡存檔</h1><pre><code class="bash">
+$ git commit -m <span class="string">"我們在這次commit做了什麼事情"</span>
+
 [master (root-commit) dfccf0c] init commit
  1 file changed, 1 insertion(+)
  create mode 100644 test.html
+
 </code></pre>
 <h1 id="工作區、暫存區與儲存庫"><a href="#工作區、暫存區與儲存庫" class="headerlink" title="工作區、暫存區與儲存庫"></a>工作區、暫存區與儲存庫</h1><p>圖示 </p>
 <p><img src="https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20190211/1.jpg" alt="1"></p>
@@ -552,8 +562,8 @@ Changes to be committed:
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/11/git(2)/" rel="prev" title="Git (2) 進階git操作(log )">
-                Git (2) 進階git操作(log ) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/11/git(2)/" rel="prev" title="Git (2) 進階git操作">
+                Git (2) 進階git操作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
