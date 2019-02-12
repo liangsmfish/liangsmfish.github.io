@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="en">
+<html class="theme-next gemini use-motion" lang="zh-tw">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -115,8 +115,8 @@
 <meta property="og:url" content="http://yoursite.com/2019/02/12/Github Page Setup/index.html">
 <meta property="og:site_name" content="Liang &#39;s blog">
 <meta property="og:description" content="Hexo● Hexo 簡介簡單的來說，就是一個Blog Framework，可以用Markdown語法寫Blog，支援很多插件，可以加入SEO，重點是方便部屬到Github Pages。 Setup● Before Install Hexo需要先安裝  Node.jsGit  ● Install Hexo npm install -g hexo-cli    這樣就完成了安裝 ! ● Start">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-12T15:24:08.931Z">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-02-12T15:36:51.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Page Setup using Hexo + NexT">
 <meta name="twitter:description" content="Hexo● Hexo 簡介簡單的來說，就是一個Blog Framework，可以用Markdown語法寫Blog，支援很多插件，可以加入SEO，重點是方便部屬到Github Pages。 Setup● Before Install Hexo需要先安裝  Node.jsGit  ● Install Hexo npm install -g hexo-cli    這樣就完成了安裝 ! ● Start">
@@ -178,7 +178,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-tw">
 
   
   
@@ -236,7 +236,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
 
   </li>
         
@@ -253,7 +253,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>Über</a>
 
   </li>
         
@@ -287,7 +287,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-categories"></i> <br>Categories</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-categories"></i> <br>Kategorien</a>
 
   </li>
         
@@ -304,7 +304,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archives"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archives"></i> <br>Archiv</a>
 
   </li>
 
@@ -391,14 +391,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2019-02-12 22:07:00 / Modified: 23:24:08" itemprop="dateCreated datePublished" datetime="2019-02-12T22:07:00+08:00">2019-02-12</time>
+              <time title="Post created: 2019-02-12 22:07:00 / Updated at: 23:36:51" itemprop="dateCreated datePublished" datetime="2019-02-12T22:07:00+08:00">2019-02-12</time>
             
 
             
@@ -417,7 +417,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/setup/" itemprop="url" rel="index"><span itemprop="name">setup</span></a></span>
@@ -468,7 +468,7 @@
 <span class="built_in">cd</span> &lt;folder&gt;
 hexo server 
 </code></pre>
-<p>  接著在瀏覽器裡輸入localhost:4000，就可以看到你的Blog了。</p>
+<p>  接著在瀏覽器裡輸入localhost:4000，就可以看到你的Blog了。<br><a id="more"></a></p>
 <h3 id="Catalog"><a href="#Catalog" class="headerlink" title="Catalog"></a>Catalog</h3><p>● 整個Hexo目錄的架構基本如下</p>
 <pre><code class="python">blog/
   _config.yml            -&gt; 主要設定檔: 可以修改作者名稱，網站標題，語言等等
@@ -486,17 +486,17 @@ hexo server
     page.md
     post.md
 </code></pre>
-<h3 id="Language-Setting"><a href="#Language-Setting" class="headerlink" title="Language Setting"></a>Language Setting</h3><p>● 修改 _config.yml: </p>
+<h3 id="Language-Setting"><a href="#Language-Setting" class="headerlink" title="Language Setting"></a>Language Setting</h3><p>● 修改 blog/_config.yml: </p>
 <pre><code class="bash">language: zh-tw
 </code></pre>
 <h3 id="Change-Themes-To-NexT"><a href="#Change-Themes-To-NexT" class="headerlink" title="Change Themes To NexT"></a>Change Themes To NexT</h3><p>● 用 Git 安裝 NexT</p>
 <pre><code class="bash">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next
 </code></pre>
-<p>●  修改_config.yml: </p>
+<p>● 修改 blog/_config.yml: </p>
 <pre><code class="bash">theme: next
 </code></pre>
 <p>● Restart server</p>
-<pre><code class="bash">$ hexo server
+<pre><code class="bash">hexo server
 </code></pre>
 <h3 id="Scheme-Setting"><a href="#Scheme-Setting" class="headerlink" title="Scheme Setting"></a>Scheme Setting</h3><p>● 在 theme/next/_config.yml 裡找到 schema ，把注釋去掉即可。</p>
 <pre><code class="bash"><span class="comment">#scheme: Muse</span>
@@ -521,9 +521,11 @@ canvas_ribbon: <span class="literal">false</span>
 <pre><code class="bash">mkdir <span class="built_in">source</span>/uploads
 </code></pre>
 <p>接著將你的大頭照丟進source/uploads 裡面</p>
-<p>● 修改 themes/next/_config.yml: </p>
+<p>再修改 themes/next/_config.yml: </p>
 <pre><code class="bash">avatar: /uploads/head.jpg
 </code></pre>
+<p>● Author Name<br>修改 blog/_config.yml: </p>
+<p>● Social Media Links<br>修改 themes/next/_config.yml:</p>
 
       
     </div>
@@ -615,10 +617,10 @@ canvas_ribbon: <span class="literal">false</span>
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -641,7 +643,7 @@ canvas_ribbon: <span class="literal">false</span>
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">5</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -660,7 +662,7 @@ canvas_ribbon: <span class="literal">false</span>
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">Kategorien</span>
                   </a>
                 </div>
               
@@ -679,7 +681,7 @@ canvas_ribbon: <span class="literal">false</span>
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">Tags</span>
                   </a>
                 </div>
               
@@ -793,7 +795,7 @@ canvas_ribbon: <span class="literal">false</span>
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
