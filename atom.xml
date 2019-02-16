@@ -2,12 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Liang &#39;s blog</title>
   
-  <subtitle>Fish</subtitle>
+  <subtitle>不忘初心</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangsmfish.github.io/"/>
   <updated>2019-02-16T10:11:31.501Z</updated>
   <id>https://liangsmfish.github.io/</id>
+  
+  <author>
+    <name>Liang-Chen-Yu</name>
+    
+  </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
