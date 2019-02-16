@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Liang &#39;s blog</title>
+  
+  <subtitle>Fish</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-02-12T17:08:11.130Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github Page Setup (2) 進階功能 + SEO</title>
+    <link href="http://yoursite.com/2019/02/13/Github%20Page%20Setup(2)%20/"/>
+    <id>http://yoursite.com/2019/02/13/Github Page Setup(2) /</id>
+    <published>2019-02-12T16:50:54.144Z</published>
+    <updated>2019-02-12T17:08:11.130Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="setup" scheme="http://yoursite.com/categories/setup/"/>
+    
+    
+      <category term="setup" scheme="http://yoursite.com/tags/setup/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github Page Setup (1) 使用 Hexo + NexT</title>
+    <link href="http://yoursite.com/2019/02/13/Github%20Page%20Setup(1)/"/>
+    <id>http://yoursite.com/2019/02/13/Github Page Setup(1)/</id>
+    <published>2019-02-12T16:50:51.144Z</published>
+    <updated>2019-02-12T17:32:43.303Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="What-is-Hexo"><a href="#What-is-Hexo" class="headerlink" title="What is Hexo ?"></a>What is Hexo ?</h3><p>● <a href="https://hexo.io/zh-tw/index.html" target="_blank" rel="noopener">Hexo </a><br>　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，<br>　重點是方便部屬到 Github Pages。</p><hr><h3 id="安裝設定"><a href="#安裝設定" class="headerlink" title="安裝設定"></a>安裝設定</h3><p>● 需要先安裝:　</p><blockquote><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p></blockquote><p>● Install Hexo</p><pre><code class="bash">npm install -g hexo-cli</code></pre><p>● 這樣就完成了安裝，十分簡單。</p><p>● Start Hexo</p><pre><code class="bash">hexo init &lt;folder&gt;<span class="built_in">cd</span> &lt;folder&gt;hexo server </code></pre><p>● 接著在瀏覽器裡輸入 localhost:4000，就可以看到你的 Blog 了。<br><a id="more"></a></p><hr><h3 id="目錄結構"><a href="#目錄結構" class="headerlink" title="目錄結構"></a>目錄結構</h3><p>● 整個Hexo目錄的架構基本如下</p><pre><code class="javascript">blog/  _config.yml            -&gt; 主要設定檔: 可以修改作者名稱，網站標題，語言等等  package.json           -&gt; 相依套件列表  node_modules/          -&gt; 相依套件  public/                -&gt; Hexo幫你自動生成的靜態網站放這  source/    _posts               -&gt; 你寫的文章都放在這裡面      hello-world.md     -&gt; 文章  themes/                -&gt; 網站主題: 預設為 landscape    landscape/      _config.yml        -&gt; 主題設定檔: 客製化頁面，網站連結等等  scaffolds/    draft.md    page.md    post.md</code></pre><hr><h3 id="語言設定"><a href="#語言設定" class="headerlink" title="語言設定"></a>語言設定</h3><p>● 修改 blog/_config.yml: </p><pre><code class="bash">language: zh-tw</code></pre><h3 id="主題設定-NexT"><a href="#主題設定-NexT" class="headerlink" title="主題設定 - NexT"></a>主題設定 - NexT</h3><p>● 用 Git 安裝 NexT</p><pre><code class="bash">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</code></pre><p>● 修改 blog/_config.yml: </p><pre><code class="bash">theme: next</code></pre><p>● Restart server</p><pre><code class="bash">hexo server</code></pre><h3 id="Scheme-設定"><a href="#Scheme-設定" class="headerlink" title="Scheme 設定"></a>Scheme 設定</h3><p>● 在 theme/next/_config.yml 裡找到 schema ，把注釋去掉即可。</p><pre><code class="bash"><span class="comment">#scheme: Muse</span><span class="comment">#scheme: Mist</span>scheme: Pisces<span class="comment">#scheme: Gemini</span></code></pre><h3 id="動畫效果設定"><a href="#動畫效果設定" class="headerlink" title="動畫效果設定"></a>動畫效果設定</h3><p>● 在 themes/next/_config.yml 裡選擇要開啟的動畫效果，把值設定成 true 即可。</p><pre><code class="bash"><span class="comment"># Canvas-nest</span>canvas_nest: <span class="literal">true</span><span class="comment"># three_waves</span>three_waves: <span class="literal">false</span><span class="comment"># canvas_lines</span>canvas_lines: <span class="literal">false</span><span class="comment"># canvas_sphere</span>canvas_sphere: <span class="literal">false</span><span class="comment"># Only fit scheme Pisces</span><span class="comment"># Canvas-ribbon</span>canvas_ribbon: <span class="literal">false</span></code></pre><h3 id="作者設定"><a href="#作者設定" class="headerlink" title="作者設定"></a>作者設定</h3><p>● 創立 uploads 資料夾</p><pre><code class="bash">mkdir <span class="built_in">source</span>/uploads</code></pre><p>● 接著將你的大頭照丟進source/uploads 裡面，再修改 themes/next/_config.yml: </p><pre><code class="bash">avatar: /uploads/head.jpg</code></pre><p>● 修改作者名<br>　修改 blog/_config.yml: </p><pre><code class="bash">title: &lt;標題&gt;subtitle: &lt;副標題&gt;description: &lt;描述&gt;author: &lt;你的名字&gt;</code></pre><p>● 連接到社群網站<br>　修改 themes/next/_config.yml:</p><pre><code class="bash">social:  GitHub: https://github.com/liangsmfish || github  E-Mail: mailto:xxxxx@gmail.com || envelope</code></pre><hr><h3 id="設定-About-頁面"><a href="#設定-About-頁面" class="headerlink" title="設定 About 頁面"></a>設定 About 頁面</h3><p>● Setup About Page</p><pre><code class="bash">hexo new page <span class="string">"about"</span></code></pre><p>● 修改 themes/next/_config.yml:</p><pre><code class="bash">menu:  home: /  archives: /archives  tags: /tags  about: /about -&gt; 把這行的註解去掉</code></pre><p>　編輯 source/about/index.md 即可 </p><hr><h3 id="加入搜尋功能"><a href="#加入搜尋功能" class="headerlink" title="加入搜尋功能"></a>加入搜尋功能</h3><p>● 安裝搜尋套件 </p><pre><code class="bash">npm i hexo-generator-search</code></pre><p>● 修改 themes/next/_config.yml:</p><pre><code class="bash"><span class="comment"># Local search</span>search  local_search:    <span class="built_in">enable</span>: <span class="literal">true</span>   <span class="literal">false</span>-&gt;<span class="literal">true</span></code></pre><hr><h3 id="第一篇-Post"><a href="#第一篇-Post" class="headerlink" title="第一篇 Post"></a>第一篇 Post</h3><p>● 創建 test 文章</p><pre><code class="bash">hexo new post <span class="built_in">test</span></code></pre><p>● 編輯source/_posts/test.md: </p><pre><code class="bash">---title: 測試date: 2019-01-12 15:02:30tags:categories:---This is a <span class="built_in">test</span> post !!</code></pre><p>● 完成!! </p><hr><h3 id="設定-Tags-以及-Categories"><a href="#設定-Tags-以及-Categories" class="headerlink" title="設定 Tags 以及 Categories"></a>設定 Tags 以及 Categories</h3><pre><code class="bash">hexo new page <span class="string">"tags"</span>hexo new page <span class="string">"Categories"</span></code></pre><p>● 編輯剛創立的頁面 source/_posts/tags/index.md </p><pre><code class="bash">title: All tagsdate: 2019-01-12 17:20:34<span class="built_in">type</span>: <span class="string">"tags"</span></code></pre><p>● 編輯剛創立的頁面 source/_posts/categories/index.md </p><pre><code class="bash">title: All tagsdate: 2019-01-12 17:20:34<span class="built_in">type</span>: <span class="string">"categories"</span></code></pre><p>● 編輯test.md:</p><pre><code class="bash">---title: 測試date: 2019-01-12 17:22:30tags:[test0,test1] -&gt; 支援多個tagscategories:<span class="built_in">test</span>---This is a <span class="built_in">test</span> post !!</code></pre><hr><h3 id="設定-Github-Pages"><a href="#設定-Github-Pages" class="headerlink" title="設定 Github Pages"></a>設定 Github Pages</h3><p>● 可以準備要發布了。在自己的Github中先創建一個專案，名稱為 username.github.io。</p><h3 id="Generate-Static-Files"><a href="#Generate-Static-Files" class="headerlink" title="Generate Static Files"></a>Generate Static Files</h3><pre><code class="bash">$ hexo generate</code></pre><p>● hexo會幫我們自動產生檔案到blog/public準備發布。</p><h3 id="Deploy-to-Github-io"><a href="#Deploy-to-Github-io" class="headerlink" title="Deploy to Github.io"></a>Deploy to Github.io</h3><pre><code class="bash">$ hexo deploy</code></pre><p>● 在 username.github.io裡面就可以看到我們剛做的修改了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;What-is-Hexo&quot;&gt;&lt;a href=&quot;#What-is-Hexo&quot; class=&quot;headerlink&quot; title=&quot;What is Hexo ?&quot;&gt;&lt;/a&gt;What is Hexo ?&lt;/h3&gt;&lt;p&gt;● &lt;a href=&quot;https://hexo.io/zh-tw/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo &lt;/a&gt;&lt;br&gt;　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，&lt;br&gt;　重點是方便部屬到 Github Pages。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;安裝設定&quot;&gt;&lt;a href=&quot;#安裝設定&quot; class=&quot;headerlink&quot; title=&quot;安裝設定&quot;&gt;&lt;/a&gt;安裝設定&lt;/h3&gt;&lt;p&gt;● 需要先安裝:
+　&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Node.js&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://git-scm.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Git&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;● Install Hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;npm install -g hexo-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;● 這樣就完成了安裝，十分簡單。&lt;/p&gt;
+&lt;p&gt;● Start Hexo&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;hexo init &amp;lt;folder&amp;gt;
+&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; &amp;lt;folder&amp;gt;
+hexo server 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;● 接著在瀏覽器裡輸入 localhost:4000，就可以看到你的 Blog 了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="setup" scheme="http://yoursite.com/categories/setup/"/>
+    
+    
+      <category term="setup" scheme="http://yoursite.com/tags/setup/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown Notes</title>
+    <link href="http://yoursite.com/2019/02/11/Markdown%20Notes/"/>
+    <id>http://yoursite.com/2019/02/11/Markdown Notes/</id>
+    <published>2019-02-11T15:15:44.935Z</published>
+    <updated>2019-02-12T19:04:36.067Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="註解"><a href="#註解" class="headerlink" title="註解"></a>註解</h1><pre><code class="bash">&lt;!-- 這句看不見，一句話的註解 這句看不見，一句話的註解 這句看不見，一句話的註解 這句看不見，一句話的註解 --&gt;</code></pre><!-- 這句看不見，一句話的註解 這句看不見，一句話的註解 這句看不見，一句話的註解 這句看不見，一句話的註解 --><p>如果看不到東西代表註解成功了!</p><hr><h1 id="字體大小"><a href="#字體大小" class="headerlink" title="字體大小"></a>字體大小</h1><pre><code class="bash"><span class="comment"># 標題</span><span class="comment">## 標題 </span><span class="comment">### 標題 </span><span class="comment">#### 標題 </span><span class="comment">##### 標題 </span><span class="comment">###### 標題 </span></code></pre><h2 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h2><h1 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h1><h2 id="標題-1"><a href="#標題-1" class="headerlink" title="標題"></a>標題</h2><h3 id="標題-2"><a href="#標題-2" class="headerlink" title="標題"></a>標題</h3><h4 id="標題-3"><a href="#標題-3" class="headerlink" title="標題"></a>標題</h4><h5 id="標題-4"><a href="#標題-4" class="headerlink" title="標題"></a>標題</h5><h6 id="標題-5"><a href="#標題-5" class="headerlink" title="標題"></a>標題</h6><a id="more"></a><h1 id="字體變化"><a href="#字體變化" class="headerlink" title="字體變化"></a>字體變化</h1><pre><code class="bash">**粗體***斜體****粗斜體***`灰色區塊`**`粗體`**  ~~刪除線~~以上*都可用_代替</code></pre><h2 id="結果-1"><a href="#結果-1" class="headerlink" title="結果"></a>結果</h2><p><strong>粗體</strong><br><em>斜體</em><br><strong><em>粗斜體</em></strong><br><code>灰色區塊</code><br><strong><code>粗體</code></strong><br><del>刪除線</del></p><hr><h1 id="圖片與超連結"><a href="#圖片與超連結" class="headerlink" title="圖片與超連結"></a>圖片與超連結</h1><pre><code class="bash">&lt;https://liangsmfish.github.io&gt;<span class="comment">### [超連結](https://liangsmfish.github.io)</span>![圖片][img][img]: https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20181209/dog.jpg[![圖片超連結]](https://liangsmfish.github.io) [圖片超連結]: https://avatars0.githubusercontent.com/u/9919?s=280&amp;v=4</code></pre><h2 id="結果-2"><a href="#結果-2" class="headerlink" title="結果"></a>結果</h2><p><a href="https://liangsmfish.github.io" target="_blank" rel="noopener">https://liangsmfish.github.io</a></p><h2 id="超連結"><a href="#超連結" class="headerlink" title="超連結"></a><a href="https://liangsmfish.github.io" target="_blank" rel="noopener">超連結</a></h2><p><img src="https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20181209/dog.jpg" alt="test-img"></p><p><a href="https://liangsmfish.github.io" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/9919?s=280&amp;v=4" alt="git-logo"></a> </p><h1 id="無序列表"><a href="#無序列表" class="headerlink" title="無序列表"></a>無序列表</h1><pre><code class="bash">* 台灣    * 台北市        * 松山區        &gt; *A        &gt; +B        &gt; -C         D        - 信義區        * 內湖區    - 台中市    + 台南市    * 高雄市- 美國* 日本</code></pre><h2 id="結果-3"><a href="#結果-3" class="headerlink" title="結果"></a>結果</h2><ul><li>台灣<ul><li>台北市<ul><li>松山區<blockquote><ul><li>A</li></ul><ul><li>B</li></ul><ul><li>C<br>D</li></ul></blockquote></li></ul><ul><li>信義區</li></ul><ul><li>內湖區</li></ul></li></ul><ul><li>台中市</li></ul><ul><li>台南市</li></ul><ul><li>高雄市</li></ul></li></ul><ul><li>美國</li></ul><ul><li>日本</li></ul><h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><pre><code class="bash">1. 一级的有序列表，阿拉伯数字    1. 二级的有序列表，羅馬数字         1. 三级的有序列表，英文小寫2. 一级的有序列表，阿拉伯数字開頭不是數字會自動對齊 </code></pre><h2 id="結果-4"><a href="#結果-4" class="headerlink" title="結果"></a>結果</h2><ol><li>一级的有序列表，阿拉伯数字<ol><li>二级的有序列表，羅馬数字<ol><li>三级的有序列表，英文小寫    </li></ol></li></ol></li><li>一级的有序列表，阿拉伯数字<br>開頭不是數字會自動對齊 </li></ol><h1 id="勾選框"><a href="#勾選框" class="headerlink" title="勾選框"></a>勾選框</h1><pre><code class="bash">- [x] 畢業- [ ] 準備失業  </code></pre><h2 id="結果-5"><a href="#結果-5" class="headerlink" title="結果"></a>結果</h2><ul><li style="list-style: none"><input type="checkbox" checked> 畢業 </li><li style="list-style: none"><input type="checkbox"> 準備失業  </li></ul><h1 id="分割線"><a href="#分割線" class="headerlink" title="分割線"></a>分割線</h1><pre><code class="bash">-------******</code></pre><h2 id="結果-6"><a href="#結果-6" class="headerlink" title="結果"></a>結果</h2><hr><hr><hr><hr><h1 id="樹狀結構"><a href="#樹狀結構" class="headerlink" title="樹狀結構"></a>樹狀結構</h1><pre><code class="bash">&gt; 動物界&gt;&gt; 脊椎動物門&gt;&gt;&gt; 靈長目&gt;&gt;&gt;&gt; 人科&gt;&gt;&gt;&gt;&gt; 人屬&gt;&gt;&gt;&gt;&gt;&gt; 智人種</code></pre><h2 id="結果-7"><a href="#結果-7" class="headerlink" title="結果"></a>結果</h2><blockquote><p>動物界</p><blockquote><p>脊椎動物門</p><blockquote><p>靈長目</p><blockquote><p>人科</p><blockquote><p>人屬</p><blockquote><p>智人種</p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote><h1 id="樹狀列表混合"><a href="#樹狀列表混合" class="headerlink" title="樹狀列表混合"></a>樹狀列表混合</h1><pre><code class="bash">&gt; <span class="comment">#### 台灣 </span>&gt;&gt;   台北市 &gt; 1. 松山區  &gt;&gt;&gt; 民生社區&gt; 2. 信義區  &gt;&gt;&gt;&gt; ATT  &gt;&gt;&gt; 威秀 &gt;&gt; 台中市&gt; <span class="comment">#### 美國</span></code></pre><h2 id="結果-8"><a href="#結果-8" class="headerlink" title="結果"></a>結果</h2><blockquote><h3 id="台灣"><a href="#台灣" class="headerlink" title="台灣"></a>台灣</h3><blockquote><p>  台北市 </p><ol><li>松山區  <blockquote><p>民生社區</p></blockquote></li><li>信義區  <blockquote><blockquote><p>ATT<br>威秀  </p></blockquote></blockquote></li></ol></blockquote></blockquote><blockquote><blockquote><p>台中市</p></blockquote></blockquote><blockquote><h3 id="美國"><a href="#美國" class="headerlink" title="美國"></a>美國</h3></blockquote><h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><pre><code class="bash">名稱|類型|排名----|:--:|--:谷歌|網路|一微軟|軟體|二三星|硬體|三</code></pre><h2 id="結果-9"><a href="#結果-9" class="headerlink" title="結果"></a>結果</h2><table><thead><tr><th>名稱</th><th style="text-align:center">類型</th><th style="text-align:right">排名</th></tr></thead><tbody><tr><td><strong>谷歌</strong></td><td style="text-align:center">網路</td><td style="text-align:right">一</td></tr><tr><td><em>微軟</em></td><td style="text-align:center">軟體</td><td style="text-align:right">二</td></tr><tr><td><del>三星</del></td><td style="text-align:center">硬體</td><td style="text-align:right">三</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;註解&quot;&gt;&lt;a href=&quot;#註解&quot; class=&quot;headerlink&quot; title=&quot;註解&quot;&gt;&lt;/a&gt;註解&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
+&amp;lt;!-- 這句看不見，一句話的註解 
+這句看不見，一句話的註解 這句看不見，一句話的註解 
+這句看不見，一句話的註解 
+--&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- 這句看不見，一句話的註解 
+這句看不見，一句話的註解 這句看不見，一句話的註解 
+這句看不見，一句話的註解 
+--&gt;
+&lt;p&gt;如果看不到東西代表註解成功了!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;字體大小&quot;&gt;&lt;a href=&quot;#字體大小&quot; class=&quot;headerlink&quot; title=&quot;字體大小&quot;&gt;&lt;/a&gt;字體大小&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 標題&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;## 標題 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;### 標題 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#### 標題 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;##### 標題 &lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;###### 標題 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;結果&quot;&gt;&lt;a href=&quot;#結果&quot; class=&quot;headerlink&quot; title=&quot;結果&quot;&gt;&lt;/a&gt;結果&lt;/h2&gt;&lt;h1 id=&quot;標題&quot;&gt;&lt;a href=&quot;#標題&quot; class=&quot;headerlink&quot; title=&quot;標題&quot;&gt;&lt;/a&gt;標題&lt;/h1&gt;&lt;h2 id=&quot;標題-1&quot;&gt;&lt;a href=&quot;#標題-1&quot; class=&quot;headerlink&quot; title=&quot;標題&quot;&gt;&lt;/a&gt;標題&lt;/h2&gt;&lt;h3 id=&quot;標題-2&quot;&gt;&lt;a href=&quot;#標題-2&quot; class=&quot;headerlink&quot; title=&quot;標題&quot;&gt;&lt;/a&gt;標題&lt;/h3&gt;&lt;h4 id=&quot;標題-3&quot;&gt;&lt;a href=&quot;#標題-3&quot; class=&quot;headerlink&quot; title=&quot;標題&quot;&gt;&lt;/a&gt;標題&lt;/h4&gt;&lt;h5 id=&quot;標題-4&quot;&gt;&lt;a href=&quot;#標題-4&quot; class=&quot;headerlink&quot; title=&quot;標題&quot;&gt;&lt;/a&gt;標題&lt;/h5&gt;&lt;h6 id=&quot;標題-5&quot;&gt;&lt;a href=&quot;#標題-5&quot; class=&quot;headerlink&quot; title=&quot;標題&quot;&gt;&lt;/a&gt;標題&lt;/h6&gt;
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://yoursite.com/categories/markdown/"/>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git (2) 進階git操作</title>
+    <link href="http://yoursite.com/2019/02/11/Git(2)/"/>
+    <id>http://yoursite.com/2019/02/11/Git(2)/</id>
+    <published>2019-02-11T12:49:02.398Z</published>
+    <updated>2019-02-12T17:59:55.113Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="檢查歷史紀錄"><a href="#檢查歷史紀錄" class="headerlink" title="檢查歷史紀錄"></a>檢查歷史紀錄</h1><pre><code class="bash">$ git <span class="built_in">log</span>commit afe36485cb94078a1ba9a7377398247e4d181765 (HEAD -&gt; master)Author: liangsmfish &lt;007liang7@gmail.com&gt;Date:   Mon Dec 10 01:05:06 2018 +0800    add indexscommit db2aeaf1543f0d634ff8a8e8497e7ad520bef2f4 (origin/master)Author: liangfish &lt;007liang7@gmail.com&gt;Date:   Sun Dec 9 16:42:49 2018 +0800    add indexs</code></pre><p>依序顯示的會是 每個 commit 的<code>id</code>，<code>作者</code>，<code>時間</code>跟<code>做了甚麼事情</code><br><a id="more"></a></p><h1 id="條件過濾搜尋"><a href="#條件過濾搜尋" class="headerlink" title="條件過濾搜尋"></a>條件過濾搜尋</h1><pre><code class="bash">$ git <span class="built_in">log</span> --oneline --author=<span class="string">"Andrew/|fish"</span><span class="comment">#搜尋 Andrew or fish 的 commit 紀錄</span>$ git <span class="built_in">log</span> --oneline --grep=<span class="string">"gg"</span><span class="comment">#搜尋 commit 訊息包含 "gg" 的紀錄</span>$ git <span class="built_in">log</span> -S <span class="string">"print"</span><span class="comment">#搜尋 commit files 中 包含 "print" 的file</span>$ git <span class="built_in">log</span> --oneline --since=<span class="string">"9am"</span> --until=<span class="string">"12am"</span> --after=<span class="string">"2019-01"</span><span class="comment">#這樣可以找到「從 2019 年 1 月之後，每天早上 9 點到 12 點的 Commit」</span></code></pre><h1 id="修改與刪除檔案"><a href="#修改與刪除檔案" class="headerlink" title="修改與刪除檔案"></a>修改與刪除檔案</h1><pre><code class="bash">$ git rm test.html <span class="comment"># 刪除 test.html</span>$ mv test.html train.html <span class="comment"># 把 test.html 改成 train.html</span></code></pre><h1 id="修改-Commit-紀錄"><a href="#修改-Commit-紀錄" class="headerlink" title="修改 Commit 紀錄"></a>修改 Commit 紀錄</h1><p>使用 –amend 參數來進行 (Commit只能處理最後一次)</p><pre><code class="bash">$ git <span class="built_in">log</span> --oneline4879515 WTF7dbc437 add hello.html657fce7 add containerabb4f43 update index pagecef6e40 create index pagecc797cd init commit$ git commit --amend -m <span class="string">"Welcome To Facebook"</span>[master 614a90c] Welcome To FacebookDate: Wed Aug 16 05:42:56 2017 +08001 file changed, 0 insertions(+), 0 deletions(-)create mode 100644 config/database.yml$ git <span class="built_in">log</span> --oneline614a90c Welcome To Facebook7dbc437 add hello.html657fce7 add containerabb4f43 update index pagecef6e40 create index pagecc797cd init commit</code></pre><h1 id="追加檔案到最近一次的-Commit"><a href="#追加檔案到最近一次的-Commit" class="headerlink" title="追加檔案到最近一次的 Commit"></a>追加檔案到最近一次的 Commit</h1><p>使用 –amend 參數來進行 Commit</p><pre><code class="bash">$ git add lost.html$ git commit --amend --no-edit</code></pre><p>這樣就可以把檔案併入最後一次的 Commit</p><h1 id="新增目錄"><a href="#新增目錄" class="headerlink" title="新增目錄"></a>新增目錄</h1><p>git 不接受空目錄，所以要隨便初始一個空檔案</p><pre><code class="bash">$ mkdir pic$ touch pic/.gitkeep</code></pre><h1 id="過濾檔案進入Git"><a href="#過濾檔案進入Git" class="headerlink" title="過濾檔案進入Git"></a>過濾檔案進入Git</h1><p>建立一個 .gitignore 規則檔案</p><pre><code class="bash">$ touch .gitignore</code></pre><p>然後編輯 gitignore</p><pre><code class="bash"><span class="comment"># 忽略單一檔案</span>secret.txt<span class="comment"># 忽略所有副檔名是 .tmp 的檔案</span>*.tmp</code></pre><p>強迫闖關(無視規則)</p><pre><code class="bash">$ git add -f 檔案名稱</code></pre><p>原住民處理(在規則建立前存在者)</p><pre><code class="bash">$ git rm secret.txt --cached <span class="comment">#脫離Git 控管</span>$ git clean -fX <span class="comment">#全部清除</span></code></pre><h1 id="檢視特定檔案的-Commit-紀錄"><a href="#檢視特定檔案的-Commit-紀錄" class="headerlink" title="檢視特定檔案的 Commit 紀錄"></a>檢視特定檔案的 Commit 紀錄</h1><pre><code class="bash">$ git <span class="built_in">log</span> test.html$ git <span class="built_in">log</span> test.html -p <span class="comment">#顯示每次commit的修改內容</span></code></pre><h1 id="檢查程式碼的作者"><a href="#檢查程式碼的作者" class="headerlink" title="檢查程式碼的作者"></a>檢查程式碼的作者</h1><pre><code class="bash">$ git blame index.html$ git blame -L 5,10 index.html <span class="comment">#顯示5~10行的範圍</span></code></pre><h1 id="復活檔案"><a href="#復活檔案" class="headerlink" title="復活檔案"></a>復活檔案</h1><pre><code class="bash">$ rm *.html$ git statusOn branch masterChanges not staged <span class="keyword">for</span> commit:  (use <span class="string">"git add/rm &lt;file&gt;..."</span> to update what will be committed)  (use <span class="string">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="keyword">in</span> working directory)    deleted:    test.html$ git checkout test.html$ git checkout . <span class="comment">#全體復活</span></code></pre><h1 id="修改剛剛"><a href="#修改剛剛" class="headerlink" title="修改剛剛"></a>修改剛剛</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;檢查歷史紀錄&quot;&gt;&lt;a href=&quot;#檢查歷史紀錄&quot; class=&quot;headerlink&quot; title=&quot;檢查歷史紀錄&quot;&gt;&lt;/a&gt;檢查歷史紀錄&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ git &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;
+
+commit afe36485cb94078a1ba9a7377398247e4d181765 (HEAD -&amp;gt; master)
+Author: liangsmfish &amp;lt;007liang7@gmail.com&amp;gt;
+Date:   Mon Dec 10 01:05:06 2018 +0800
+
+    add indexs
+
+commit db2aeaf1543f0d634ff8a8e8497e7ad520bef2f4 (origin/master)
+Author: liangfish &amp;lt;007liang7@gmail.com&amp;gt;
+Date:   Sun Dec 9 16:42:49 2018 +0800
+
+    add indexs
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;依序顯示的會是 每個 commit 的&lt;code&gt;id&lt;/code&gt;，&lt;code&gt;作者&lt;/code&gt;，&lt;code&gt;時間&lt;/code&gt;跟&lt;code&gt;做了甚麼事情&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git (1) 開始使用git(init,add,commit)</title>
+    <link href="http://yoursite.com/2019/02/11/Git(1)/"/>
+    <id>http://yoursite.com/2019/02/11/Git(1)/</id>
+    <published>2019-02-11T11:10:30.473Z</published>
+    <updated>2019-02-12T17:59:52.128Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><pre><code class="bash"><span class="built_in">cd</span> 至欲交給git版控的目錄$ git init</code></pre><p>PS. 若想脫離git版控，把.git目錄砍掉即可</p><h1 id="把檔案交給-Git"><a href="#把檔案交給-Git" class="headerlink" title="把檔案交給 Git"></a>把檔案交給 Git</h1><p>可以先檢查此目錄的狀態</p><pre><code class="bash">$ git status<span class="comment"># 如果是空的</span>On branch masterInitial commitnothing to commit (create/copy files and use <span class="string">"git add"</span> to track)<span class="comment"># 如果裡面只有 test.html</span>On branch masterInitial commitUntracked files:  (use <span class="string">"git add &lt;file&gt;..."</span> to include <span class="keyword">in</span> what will be committed)    test.htmlnothing added to commit but untracked files present (use <span class="string">"git add"</span> to track)</code></pre><a id="more"></a><p>把untracked files交給Git</p><pre><code class="bash">$ git add test.html</code></pre><p>完成後再檢查一次目前的狀態</p><pre><code class="bash">$ git statusOn branch masterInitial commitChanges to be committed:  (use <span class="string">"git rm --cached &lt;file&gt;..."</span> to unstage)    new file:   test.html</code></pre><p>PS. 若add test.html 後又做了修改，需要再重新add 一次</p><p><strong><code>add .</code> </strong> vs <strong><code>add --all</code></strong></p><p><code>git add .</code> 這個指令會把目前當下這個目錄以下的所有子目錄裡的異動全部加到暫存區，但在這個目錄的以外的就不歸它管了。<br><code>git add --all</code> 這個指令不管在專案的哪一層目錄執行，在這個專案裡所有的異動都會被加至暫存區。</p><h1 id="把暫存區的內容提交到倉庫裡存檔"><a href="#把暫存區的內容提交到倉庫裡存檔" class="headerlink" title="把暫存區的內容提交到倉庫裡存檔"></a>把暫存區的內容提交到倉庫裡存檔</h1><pre><code class="bash">$ git commit -m <span class="string">"我們在這次commit做了什麼事情"</span>[master (root-commit) dfccf0c] init commit 1 file changed, 1 insertion(+) create mode 100644 test.html</code></pre><h1 id="工作區、暫存區與儲存庫"><a href="#工作區、暫存區與儲存庫" class="headerlink" title="工作區、暫存區與儲存庫"></a>工作區、暫存區與儲存庫</h1><p>圖示 </p><p><img src="https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20190211/1.jpg" alt="1"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
+&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; 至欲交給git版控的目錄
+
+$ git init
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;PS. 若想脫離git版控，把.git目錄砍掉即可&lt;/p&gt;
+&lt;h1 id=&quot;把檔案交給-Git&quot;&gt;&lt;a href=&quot;#把檔案交給-Git&quot; class=&quot;headerlink&quot; title=&quot;把檔案交給 Git&quot;&gt;&lt;/a&gt;把檔案交給 Git&lt;/h1&gt;&lt;p&gt;可以先檢查此目錄的狀態&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
+$ git status
+
+&lt;span class=&quot;comment&quot;&gt;# 如果是空的&lt;/span&gt;
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use &lt;span class=&quot;string&quot;&gt;&quot;git add&quot;&lt;/span&gt; to track)
+
+&lt;span class=&quot;comment&quot;&gt;# 如果裡面只有 test.html&lt;/span&gt;
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use &lt;span class=&quot;string&quot;&gt;&quot;git add &amp;lt;file&amp;gt;...&quot;&lt;/span&gt; to include &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; what will be committed)
+    test.html
+nothing added to commit but untracked files present (use &lt;span class=&quot;string&quot;&gt;&quot;git add&quot;&lt;/span&gt; to track)
+
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+</feed>
