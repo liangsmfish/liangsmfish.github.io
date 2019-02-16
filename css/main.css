@@ -1852,7 +1852,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9a52b1;
+  background: #93ffa4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3128,5 +3128,5 @@ body {
   background: url("https://source.unsplash.com/1600x900/?water");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 80% 80%;
+  background-position: 50% 50%;
 }
