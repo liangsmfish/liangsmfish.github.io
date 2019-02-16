@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Github Page Setup (2) 進階功能 + SEO]]></title>
+    <url>%2F2019%2F02%2F13%2FGithub%20Page%20Setup(2)%20%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>setup</category>
+      </categories>
+      <tags>
+        <tag>setup</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Github Page Setup (1) 使用 Hexo + NexT]]></title>
+    <url>%2F2019%2F02%2F13%2FGithub%20Page%20Setup(1)%2F</url>
+    <content type="text"><![CDATA[What is Hexo ?● Hexo 簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO， 重點是方便部屬到 Github Pages。 安裝設定● 需要先安裝: Node.jsGit ● Install Hexo npm install -g hexo-cli ● 這樣就完成了安裝，十分簡單。 ● Start Hexo hexo init &lt;folder&gt; cd &lt;folder&gt; hexo server ● 接著在瀏覽器裡輸入 localhost:4000，就可以看到你的 Blog 了。 目錄結構● 整個Hexo目錄的架構基本如下 blog/ _config.yml -&gt; 主要設定檔: 可以修改作者名稱，網站標題，語言等等 package.json -&gt; 相依套件列表 node_modules/ -&gt; 相依套件 public/ -&gt; Hexo幫你自動生成的靜態網站放這 source/ _posts -&gt; 你寫的文章都放在這裡面 hello-world.md -&gt; 文章 themes/ -&gt; 網站主題: 預設為 landscape landscape/ _config.yml -&gt; 主題設定檔: 客製化頁面，網站連結等等 scaffolds/ draft.md page.md post.md 語言設定● 修改 blog/_config.yml: language: zh-tw 主題設定 - NexT● 用 Git 安裝 NexT git clone https://github.com/iissnan/hexo-theme-next themes/next ● 修改 blog/_config.yml: theme: next ● Restart server hexo server Scheme 設定● 在 theme/next/_config.yml 裡找到 schema ，把注釋去掉即可。 #scheme: Muse #scheme: Mist scheme: Pisces #scheme: Gemini 動畫效果設定● 在 themes/next/_config.yml 裡選擇要開啟的動畫效果，把值設定成 true 即可。 # Canvas-nest canvas_nest: true # three_waves three_waves: false # canvas_lines canvas_lines: false # canvas_sphere canvas_sphere: false # Only fit scheme Pisces # Canvas-ribbon canvas_ribbon: false 作者設定● 創立 uploads 資料夾 mkdir source/uploads ● 接著將你的大頭照丟進source/uploads 裡面，再修改 themes/next/_config.yml: avatar: /uploads/head.jpg ● 修改作者名 修改 blog/_config.yml: title: &lt;標題&gt; subtitle: &lt;副標題&gt; description: &lt;描述&gt; author: &lt;你的名字&gt; ● 連接到社群網站 修改 themes/next/_config.yml: social: GitHub: https://github.com/liangsmfish || github E-Mail: mailto:xxxxx@gmail.com || envelope 設定 About 頁面● Setup About Page hexo new page "about" ● 修改 themes/next/_config.yml: menu: home: / archives: /archives tags: /tags about: /about -&gt; 把這行的註解去掉 編輯 source/about/index.md 即可 加入搜尋功能● 安裝搜尋套件 npm i hexo-generator-search ● 修改 themes/next/_config.yml: # Local search search local_search: enable: true false-&gt;true 第一篇 Post● 創建 test 文章 hexo new post test ● 編輯source/_posts/test.md: --- title: 測試 date: 2019-01-12 15:02:30 tags: categories: --- This is a test post !! ● 完成!! 設定 Tags 以及 Categorieshexo new page "tags" hexo new page "Categories" ● 編輯剛創立的頁面 source/_posts/tags/index.md title: All tags date: 2019-01-12 17:20:34 type: "tags" ● 編輯剛創立的頁面 source/_posts/categories/index.md title: All tags date: 2019-01-12 17:20:34 type: "categories" ● 編輯test.md: --- title: 測試 date: 2019-01-12 17:22:30 tags:[test0,test1] -&gt; 支援多個tags categories:test --- This is a test post !! 設定 Github Pages● 可以準備要發布了。在自己的Github中先創建一個專案，名稱為 username.github.io。 Generate Static Files$ hexo generate ● hexo會幫我們自動產生檔案到blog/public準備發布。 Deploy to Github.io$ hexo deploy ● 在 username.github.io裡面就可以看到我們剛做的修改了。]]></content>
+      <categories>
+        <category>setup</category>
+      </categories>
+      <tags>
+        <tag>setup</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown Notes]]></title>
+    <url>%2F2019%2F02%2F11%2FMarkdown%20Notes%2F</url>
+    <content type="text"><![CDATA[註解 &lt;!-- 這句看不見，一句話的註解 這句看不見，一句話的註解 這句看不見，一句話的註解 這句看不見，一句話的註解 --&gt; 如果看不到東西代表註解成功了! 字體大小# 標題 ## 標題 ### 標題 #### 標題 ##### 標題 ###### 標題 結果標題標題標題標題標題標題 字體變化**粗體** *斜體* ***粗斜體*** `灰色區塊` **`粗體`** ~~刪除線~~ 以上*都可用_代替 結果粗體斜體粗斜體灰色區塊粗體刪除線 圖片與超連結 &lt;https://liangsmfish.github.io&gt; ### [超連結](https://liangsmfish.github.io) ![圖片][img] [img]: https://raw.githubusercontent.com/liangsmfish/liangsmfish.github.io/master/pictures/20181209/dog.jpg [![圖片超連結]](https://liangsmfish.github.io) [圖片超連結]: https://avatars0.githubusercontent.com/u/9919?s=280&amp;v=4 結果https://liangsmfish.github.io 超連結 無序列表 * 台灣 * 台北市 * 松山區 &gt; *A &gt; +B &gt; -C D - 信義區 * 內湖區 - 台中市 + 台南市 * 高雄市 - 美國 * 日本 結果 台灣 台北市 松山區 A B CD 信義區 內湖區 台中市 台南市 高雄市 美國 日本 有序列表1. 一级的有序列表，阿拉伯数字 1. 二级的有序列表，羅馬数字 1. 三级的有序列表，英文小寫 2. 一级的有序列表，阿拉伯数字 開頭不是數字會自動對齊 結果 一级的有序列表，阿拉伯数字 二级的有序列表，羅馬数字 三级的有序列表，英文小寫 一级的有序列表，阿拉伯数字開頭不是數字會自動對齊 勾選框- [x] 畢業 - [ ] 準備失業 結果 畢業 準備失業 分割線 --- ---- *** *** 結果 樹狀結構&gt; 動物界 &gt;&gt; 脊椎動物門 &gt;&gt;&gt; 靈長目 &gt;&gt;&gt;&gt; 人科 &gt;&gt;&gt;&gt;&gt; 人屬 &gt;&gt;&gt;&gt;&gt;&gt; 智人種 結果 動物界 脊椎動物門 靈長目 人科 人屬 智人種 樹狀列表混合 &gt; #### 台灣 &gt;&gt; 台北市 &gt; 1. 松山區 &gt;&gt;&gt; 民生社區 &gt; 2. 信義區 &gt;&gt;&gt;&gt; ATT &gt;&gt;&gt; 威秀 &gt;&gt; 台中市 &gt; #### 美國 結果 台灣 台北市 松山區 民生社區 信義區 ATT威秀 台中市 美國 表格 名稱|類型|排名 ----|:--:|--: 谷歌|網路|一 微軟|軟體|二 三星|硬體|三 結果 名稱 類型 排名 谷歌 網路 一 微軟 軟體 二 三星 硬體 三]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git (2) 進階git操作]]></title>
+    <url>%2F2019%2F02%2F11%2FGit(2)%2F</url>
+    <content type="text"><![CDATA[檢查歷史紀錄$ git log commit afe36485cb94078a1ba9a7377398247e4d181765 (HEAD -&gt; master) Author: liangsmfish &lt;007liang7@gmail.com&gt; Date: Mon Dec 10 01:05:06 2018 +0800 add indexs commit db2aeaf1543f0d634ff8a8e8497e7ad520bef2f4 (origin/master) Author: liangfish &lt;007liang7@gmail.com&gt; Date: Sun Dec 9 16:42:49 2018 +0800 add indexs 依序顯示的會是 每個 commit 的id，作者，時間跟做了甚麼事情 條件過濾搜尋$ git log --oneline --author="Andrew/|fish" #搜尋 Andrew or fish 的 commit 紀錄 $ git log --oneline --grep="gg" #搜尋 commit 訊息包含 "gg" 的紀錄 $ git log -S "print" #搜尋 commit files 中 包含 "print" 的file $ git log --oneline --since="9am" --until="12am" --after="2019-01" #這樣可以找到「從 2019 年 1 月之後，每天早上 9 點到 12 點的 Commit」 修改與刪除檔案$ git rm test.html # 刪除 test.html $ mv test.html train.html # 把 test.html 改成 train.html 修改 Commit 紀錄使用 –amend 參數來進行 (Commit只能處理最後一次) $ git log --oneline 4879515 WTF 7dbc437 add hello.html 657fce7 add container abb4f43 update index page cef6e40 create index page cc797cd init commit $ git commit --amend -m "Welcome To Facebook" [master 614a90c] Welcome To Facebook Date: Wed Aug 16 05:42:56 2017 +0800 1 file changed, 0 insertions(+), 0 deletions(-) create mode 100644 config/database.yml $ git log --oneline 614a90c Welcome To Facebook 7dbc437 add hello.html 657fce7 add container abb4f43 update index page cef6e40 create index page cc797cd init commit 追加檔案到最近一次的 Commit使用 –amend 參數來進行 Commit $ git add lost.html $ git commit --amend --no-edit 這樣就可以把檔案併入最後一次的 Commit 新增目錄git 不接受空目錄，所以要隨便初始一個空檔案 $ mkdir pic $ touch pic/.gitkeep 過濾檔案進入Git建立一個 .gitignore 規則檔案 $ touch .gitignore 然後編輯 gitignore # 忽略單一檔案 secret.txt # 忽略所有副檔名是 .tmp 的檔案 *.tmp 強迫闖關(無視規則) $ git add -f 檔案名稱 原住民處理(在規則建立前存在者) $ git rm secret.txt --cached #脫離Git 控管 $ git clean -fX #全部清除 檢視特定檔案的 Commit 紀錄 $ git log test.html $ git log test.html -p #顯示每次commit的修改內容 檢查程式碼的作者 $ git blame index.html $ git blame -L 5,10 index.html #顯示5~10行的範圍 復活檔案 $ rm *.html $ git status On branch master Changes not staged for commit: (use "git add/rm &lt;file&gt;..." to update what will be committed) (use "git checkout -- &lt;file&gt;..." to discard changes in working directory) deleted: test.html $ git checkout test.html $ git checkout . #全體復活 修改剛剛]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git (1) 開始使用git(init,add,commit)]]></title>
+    <url>%2F2019%2F02%2F11%2FGit(1)%2F</url>
+    <content type="text"><![CDATA[初始化 cd 至欲交給git版控的目錄 $ git init PS. 若想脫離git版控，把.git目錄砍掉即可 把檔案交給 Git可以先檢查此目錄的狀態 $ git status # 如果是空的 On branch master Initial commit nothing to commit (create/copy files and use "git add" to track) # 如果裡面只有 test.html On branch master Initial commit Untracked files: (use "git add &lt;file&gt;..." to include in what will be committed) test.html nothing added to commit but untracked files present (use "git add" to track) 把untracked files交給Git $ git add test.html 完成後再檢查一次目前的狀態 $ git status On branch master Initial commit Changes to be committed: (use "git rm --cached &lt;file&gt;..." to unstage) new file: test.html PS. 若add test.html 後又做了修改，需要再重新add 一次 add . vs add --all git add . 這個指令會把目前當下這個目錄以下的所有子目錄裡的異動全部加到暫存區，但在這個目錄的以外的就不歸它管了。git add --all 這個指令不管在專案的哪一層目錄執行，在這個專案裡所有的異動都會被加至暫存區。 把暫存區的內容提交到倉庫裡存檔 $ git commit -m "我們在這次commit做了什麼事情" [master (root-commit) dfccf0c] init commit 1 file changed, 1 insertion(+) create mode 100644 test.html 工作區、暫存區與儲存庫圖示]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+</search>
