@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Liang &#39;s blog">
 <meta property="og:description" content="What is Hexo ?● Hexo 　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，　重點是方便部屬到 Github Pages。  安裝設定● 需要先安裝: 　  Node.jsGit  ● Install Hexo npm install -g hexo-cli  ● 這樣就完成了安裝，十分簡單。 ● St">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-12T17:32:43.303Z">
+<meta property="og:updated_time" content="2019-02-16T06:24:54.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Page Setup (1) 使用 Hexo + NexT">
 <meta name="twitter:description" content="What is Hexo ?● Hexo 　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，　重點是方便部屬到 Github Pages。  安裝設定● 需要先安裝: 　  Node.jsGit  ● Install Hexo npm install -g hexo-cli  ● 這樣就完成了安裝，十分簡單。 ● St">
@@ -318,23 +318,6 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archives"></i> <br>Archives</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>Sitemap</a>
-
-  </li>
 
       
       
@@ -455,12 +438,24 @@
                 
               
 
-              <time title="Created: 2019-02-13 00:50:51 / Modified: 01:32:43" itemprop="dateCreated datePublished" datetime="2019-02-13T00:50:51+08:00">2019-02-13</time>
+              <time title="Created: 2019-02-13 00:50:51" itemprop="dateCreated datePublished" datetime="2019-02-13T00:50:51+08:00">2019-02-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-16 14:24:54" itemprop="dateModified" datetime="2019-02-16T14:24:54+08:00">2019-02-16</time>
               
             
           </span>
@@ -627,13 +622,14 @@ author: &lt;你的名字&gt;
 <p>　編輯 source/about/index.md 即可 </p>
 <hr>
 <h3 id="加入搜尋功能"><a href="#加入搜尋功能" class="headerlink" title="加入搜尋功能"></a>加入搜尋功能</h3><p>● 安裝搜尋套件 </p>
-<pre><code class="bash">npm i hexo-generator-search
+<pre><code class="bash">npm install hexo-generator-searchdb --save
 </code></pre>
-<p>● 修改 themes/next/_config.yml:</p>
-<pre><code class="bash"><span class="comment"># Local search</span>
-search
-  local_search:
-    <span class="built_in">enable</span>: <span class="literal">true</span>   <span class="literal">false</span>-&gt;<span class="literal">true</span>
+<p>● 加入以下至 themes/next/_config.yml:</p>
+<pre><code class="bash">search:
+  path: search.xml
+  field: post
+  format: html
+  <span class="built_in">limit</span>: 10000
 
 </code></pre>
 <hr>
