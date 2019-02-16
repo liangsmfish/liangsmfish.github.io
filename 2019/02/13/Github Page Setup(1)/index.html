@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="What is Hexo ?● Hexo 　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，　重點是方便部屬到 Github Pages。  安裝設定● 需要先安裝: 　  Node.jsGit  ● Install Hexo npm install -g hexo-cli  ● 這樣就完成了安裝，十分簡單。 ● St">
+<meta name="keywords" content="setup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github Page Setup (1) 使用 Hexo + NexT">
+<meta property="og:url" content="https://liangsmfish.github.io/2019/02/13/Github Page Setup(1)/index.html">
+<meta property="og:site_name" content="Liang &#39;s blog">
+<meta property="og:description" content="What is Hexo ?● Hexo 　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，　重點是方便部屬到 Github Pages。  安裝設定● 需要先安裝: 　  Node.jsGit  ● Install Hexo npm install -g hexo-cli  ● 這樣就完成了安裝，十分簡單。 ● St">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-16T06:24:54.200Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github Page Setup (1) 使用 Hexo + NexT">
+<meta name="twitter:description" content="What is Hexo ?● Hexo 　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，　重點是方便部屬到 Github Pages。  安裝設定● 需要先安裝: 　  Node.jsGit  ● Install Hexo npm install -g hexo-cli  ● 這樣就完成了安裝，十分簡單。 ● St">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Liang 's blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://liangsmfish.github.io/2019/02/13/Github Page Setup(1)/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Github Page Setup (1) 使用 Hexo + NexT | Liang 's blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134381772-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134381772-1');
+</script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Liang 's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Fish</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">5</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">3</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tag"></i> <br>Tags<span class="badge">3</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liangsmfish.github.io/2019/02/13/Github Page Setup(1)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liang 's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Github Page Setup (1) 使用 Hexo + NexT
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-13 00:50:51" itemprop="dateCreated datePublished" datetime="2019-02-13T00:50:51+08:00">2019-02-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-16 14:24:54" itemprop="dateModified" datetime="2019-02-16T14:24:54+08:00">2019-02-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/setup/" itemprop="url" rel="index"><span itemprop="name">setup</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/13/Github Page Setup(1)/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/13/Github Page Setup(1)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="What-is-Hexo"><a href="#What-is-Hexo" class="headerlink" title="What is Hexo ?"></a>What is Hexo ?</h3><p>● <a href="https://hexo.io/zh-tw/index.html" target="_blank" rel="noopener">Hexo </a><br>　簡單的來說，就是一個 Blog Framework，可以用 Markdown 語法寫 Blog，支援很多插件，可以加入 SEO，<br>　重點是方便部屬到 Github Pages。</p>
+<hr>
+<h3 id="安裝設定"><a href="#安裝設定" class="headerlink" title="安裝設定"></a>安裝設定</h3><p>● 需要先安裝:
+　</p>
+<blockquote>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p>
+</blockquote>
+<p>● Install Hexo</p>
+<pre><code class="bash">npm install -g hexo-cli
+</code></pre>
+<p>● 這樣就完成了安裝，十分簡單。</p>
+<p>● Start Hexo</p>
+<pre><code class="bash">hexo init &lt;folder&gt;
+<span class="built_in">cd</span> &lt;folder&gt;
+hexo server 
+</code></pre>
+<p>● 接著在瀏覽器裡輸入 localhost:4000，就可以看到你的 Blog 了。<br><a id="more"></a></p>
+<hr>
+<h3 id="目錄結構"><a href="#目錄結構" class="headerlink" title="目錄結構"></a>目錄結構</h3><p>● 整個Hexo目錄的架構基本如下</p>
+<pre><code class="javascript">blog/
+  _config.yml            -&gt; 主要設定檔: 可以修改作者名稱，網站標題，語言等等
+  package.json           -&gt; 相依套件列表
+  node_modules/          -&gt; 相依套件
+  public/                -&gt; Hexo幫你自動生成的靜態網站放這
+  source/
+    _posts               -&gt; 你寫的文章都放在這裡面
+      hello-world.md     -&gt; 文章
+  themes/                -&gt; 網站主題: 預設為 landscape
+    landscape/
+      _config.yml        -&gt; 主題設定檔: 客製化頁面，網站連結等等
+  scaffolds/
+    draft.md
+    page.md
+    post.md
+</code></pre>
+<hr>
+<h3 id="語言設定"><a href="#語言設定" class="headerlink" title="語言設定"></a>語言設定</h3><p>● 修改 blog/_config.yml: </p>
+<pre><code class="bash">language: zh-tw
+</code></pre>
+<h3 id="主題設定-NexT"><a href="#主題設定-NexT" class="headerlink" title="主題設定 - NexT"></a>主題設定 - NexT</h3><p>● 用 Git 安裝 NexT</p>
+<pre><code class="bash">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre>
+<p>● 修改 blog/_config.yml: </p>
+<pre><code class="bash">theme: next
+</code></pre>
+<p>● Restart server</p>
+<pre><code class="bash">hexo server
+</code></pre>
+<h3 id="Scheme-設定"><a href="#Scheme-設定" class="headerlink" title="Scheme 設定"></a>Scheme 設定</h3><p>● 在 theme/next/_config.yml 裡找到 schema ，把注釋去掉即可。</p>
+<pre><code class="bash"><span class="comment">#scheme: Muse</span>
+<span class="comment">#scheme: Mist</span>
+scheme: Pisces
+<span class="comment">#scheme: Gemini</span>
+</code></pre>
+<h3 id="動畫效果設定"><a href="#動畫效果設定" class="headerlink" title="動畫效果設定"></a>動畫效果設定</h3><p>● 在 themes/next/_config.yml 裡選擇要開啟的動畫效果，把值設定成 true 即可。</p>
+<pre><code class="bash"><span class="comment"># Canvas-nest</span>
+canvas_nest: <span class="literal">true</span>
+<span class="comment"># three_waves</span>
+three_waves: <span class="literal">false</span>
+<span class="comment"># canvas_lines</span>
+canvas_lines: <span class="literal">false</span>
+<span class="comment"># canvas_sphere</span>
+canvas_sphere: <span class="literal">false</span>
+<span class="comment"># Only fit scheme Pisces</span>
+<span class="comment"># Canvas-ribbon</span>
+canvas_ribbon: <span class="literal">false</span>
+</code></pre>
+<h3 id="作者設定"><a href="#作者設定" class="headerlink" title="作者設定"></a>作者設定</h3><p>● 創立 uploads 資料夾</p>
+<pre><code class="bash">mkdir <span class="built_in">source</span>/uploads
+</code></pre>
+<p>● 接著將你的大頭照丟進source/uploads 裡面，再修改 themes/next/_config.yml: </p>
+<pre><code class="bash">avatar: /uploads/head.jpg
+</code></pre>
+<p>● 修改作者名<br>　修改 blog/_config.yml: </p>
+<pre><code class="bash">title: &lt;標題&gt;
+subtitle: &lt;副標題&gt;
+description: &lt;描述&gt;
+author: &lt;你的名字&gt;
+</code></pre>
+<p>● 連接到社群網站<br>　修改 themes/next/_config.yml:</p>
+<pre><code class="bash">social:
+  GitHub: https://github.com/liangsmfish || github
+  E-Mail: mailto:xxxxx@gmail.com || envelope
+</code></pre>
+<hr>
+<h3 id="設定-About-頁面"><a href="#設定-About-頁面" class="headerlink" title="設定 About 頁面"></a>設定 About 頁面</h3><p>● Setup About Page</p>
+<pre><code class="bash">hexo new page <span class="string">"about"</span>
+</code></pre>
+<p>● 修改 themes/next/_config.yml:</p>
+<pre><code class="bash">menu:
+  home: /
+  archives: /archives
+  tags: /tags
+  about: /about -&gt; 把這行的註解去掉
+</code></pre>
+<p>　編輯 source/about/index.md 即可 </p>
+<hr>
+<h3 id="加入搜尋功能"><a href="#加入搜尋功能" class="headerlink" title="加入搜尋功能"></a>加入搜尋功能</h3><p>● 安裝搜尋套件 </p>
+<pre><code class="bash">npm install hexo-generator-searchdb --save
+</code></pre>
+<p>● 加入以下至 themes/next/_config.yml:</p>
+<pre><code class="bash">search:
+  path: search.xml
+  field: post
+  format: html
+  <span class="built_in">limit</span>: 10000
+
+</code></pre>
+<hr>
+<h3 id="第一篇-Post"><a href="#第一篇-Post" class="headerlink" title="第一篇 Post"></a>第一篇 Post</h3><p>● 創建 test 文章</p>
+<pre><code class="bash">hexo new post <span class="built_in">test</span>
+</code></pre>
+<p>● 編輯source/_posts/test.md: </p>
+<pre><code class="bash">---
+title: 測試
+date: 2019-01-12 15:02:30
+tags:
+categories:
+---
+This is a <span class="built_in">test</span> post !!
+</code></pre>
+<p>● 完成!! </p>
+<hr>
+<h3 id="設定-Tags-以及-Categories"><a href="#設定-Tags-以及-Categories" class="headerlink" title="設定 Tags 以及 Categories"></a>設定 Tags 以及 Categories</h3><pre><code class="bash">hexo new page <span class="string">"tags"</span>
+hexo new page <span class="string">"Categories"</span>
+</code></pre>
+<p>● 編輯剛創立的頁面 source/_posts/tags/index.md </p>
+<pre><code class="bash">title: All tags
+date: 2019-01-12 17:20:34
+<span class="built_in">type</span>: <span class="string">"tags"</span>
+</code></pre>
+<p>● 編輯剛創立的頁面 source/_posts/categories/index.md </p>
+<pre><code class="bash">title: All tags
+date: 2019-01-12 17:20:34
+<span class="built_in">type</span>: <span class="string">"categories"</span>
+</code></pre>
+<p>● 編輯test.md:</p>
+<pre><code class="bash">---
+title: 測試
+date: 2019-01-12 17:22:30
+tags:[test0,test1] -&gt; 支援多個tags
+categories:<span class="built_in">test</span>
+---
+This is a <span class="built_in">test</span> post !!
+</code></pre>
+<hr>
+<h3 id="設定-Github-Pages"><a href="#設定-Github-Pages" class="headerlink" title="設定 Github Pages"></a>設定 Github Pages</h3><p>● 可以準備要發布了。在自己的Github中先創建一個專案，名稱為 username.github.io。</p>
+<h3 id="Generate-Static-Files"><a href="#Generate-Static-Files" class="headerlink" title="Generate Static Files"></a>Generate Static Files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>● hexo會幫我們自動產生檔案到blog/public準備發布。</p>
+<h3 id="Deploy-to-Github-io"><a href="#Deploy-to-Github-io" class="headerlink" title="Deploy to Github.io"></a>Deploy to Github.io</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>● 在 username.github.io裡面就可以看到我們剛做的修改了。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/setup/" rel="tag"><i class="fa fa-tag" style="font-size:24px"></i> setup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/11/Markdown Notes/" rel="next" title="Markdown Notes">
+                <i class="fa fa-chevron-left"></i> Markdown Notes
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/13/Github Page Setup(2) /" rel="prev" title="Github Page Setup (2) 進階功能 + SEO">
+                Github Page Setup (2) 進階功能 + SEO <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/head.jpg" alt="">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/liangsmfish" title="GitHub &rarr; https://github.com/liangsmfish" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:007liang@gmail.com" title="E-Mail &rarr; mailto:007liang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/liangsmfish/liangsmfish.github.io/blob/master/resume.txt" title="Resume &rarr; https://github.com/liangsmfish/liangsmfish.github.io/blob/master/resume.txt" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Resume</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Hexo"><span class="nav-number">1.</span> <span class="nav-text">What is Hexo ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝設定"><span class="nav-number">2.</span> <span class="nav-text">安裝設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目錄結構"><span class="nav-number">3.</span> <span class="nav-text">目錄結構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#語言設定"><span class="nav-number">4.</span> <span class="nav-text">語言設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主題設定-NexT"><span class="nav-number">5.</span> <span class="nav-text">主題設定 - NexT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-設定"><span class="nav-number">6.</span> <span class="nav-text">Scheme 設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#動畫效果設定"><span class="nav-number">7.</span> <span class="nav-text">動畫效果設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作者設定"><span class="nav-number">8.</span> <span class="nav-text">作者設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定-About-頁面"><span class="nav-number">9.</span> <span class="nav-text">設定 About 頁面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入搜尋功能"><span class="nav-number">10.</span> <span class="nav-text">加入搜尋功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一篇-Post"><span class="nav-number">11.</span> <span class="nav-text">第一篇 Post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定-Tags-以及-Categories"><span class="nav-number">12.</span> <span class="nav-text">設定 Tags 以及 Categories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定-Github-Pages"><span class="nav-number">13.</span> <span class="nav-text">設定 Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-Static-Files"><span class="nav-number">14.</span> <span class="nav-text">Generate Static Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-Github-io"><span class="nav-number">15.</span> <span class="nav-text">Deploy to Github.io</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.6.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="Total Views">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://liangsmfish.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://liangsmfish.github.io/2019/02/13/Github Page Setup(1)/';
+        this.page.identifier = '2019/02/13/Github Page Setup(1)/';
+        this.page.title = 'Github Page Setup (1) 使用 Hexo + NexT';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://liangsmfish.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
