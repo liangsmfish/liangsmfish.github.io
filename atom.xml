@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liangsmfish.github.io/"/>
-  <updated>2019-02-12T17:08:11.130Z</updated>
+  <updated>2019-02-16T08:12:03.333Z</updated>
   <id>https://liangsmfish.github.io/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -16,9 +16,21 @@
     <link href="https://liangsmfish.github.io/2019/02/13/Github%20Page%20Setup(2)%20/"/>
     <id>https://liangsmfish.github.io/2019/02/13/Github Page Setup(2) /</id>
     <published>2019-02-12T16:50:54.144Z</published>
-    <updated>2019-02-12T17:08:11.130Z</updated>
+    <updated>2019-02-16T08:12:03.333Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="建立留言板"><a href="#建立留言板" class="headerlink" title="建立留言板"></a>建立留言板</h3><p>● 使用<a href="https://disqus.com/" target="_blank" rel="noopener">Disqus </a>:</p><p>● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site”</p><p>● Website Name 中填入自己的網站名</p><p>● 最後修改 blog/_config.yml: </p><pre><code class="bash">disqus:<span class="built_in">enable</span>: <span class="literal">true</span>shortname: &lt;your-website-name&gt;count: <span class="literal">true</span></code></pre><a id="more"></a><h3 id="RSS訂閱"><a href="#RSS訂閱" class="headerlink" title="RSS訂閱"></a>RSS訂閱</h3><p>● 安裝套件</p><pre><code class="bash">npm install hexo-generator-feed</code></pre><p>● 最後修改 blog/_config.yml，加入: </p><pre><code class="bash">feed:<span class="built_in">type</span>: atompath: atom.xml<span class="built_in">limit</span>: 20  </code></pre><hr><h3 id="文章預覽斷點"><a href="#文章預覽斷點" class="headerlink" title="文章預覽斷點"></a>文章預覽斷點</h3><p>● 利用<!--more-->做斷點</p><pre><code class="bash">預覽可見&lt;!--more--&gt;預覽不可見</code></pre>]]></content>
     
     <summary type="html">
+    
+      &lt;h3 id=&quot;建立留言板&quot;&gt;&lt;a href=&quot;#建立留言板&quot; class=&quot;headerlink&quot; title=&quot;建立留言板&quot;&gt;&lt;/a&gt;建立留言板&lt;/h3&gt;&lt;p&gt;● 使用&lt;a href=&quot;https://disqus.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Disqus &lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site”&lt;/p&gt;
+&lt;p&gt;● Website Name 中填入自己的網站名&lt;/p&gt;
+&lt;p&gt;● 最後修改 blog/_config.yml: &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;disqus:
+&lt;span class=&quot;built_in&quot;&gt;enable&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+shortname: &amp;lt;your-website-name&amp;gt;
+count: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     

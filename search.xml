@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Github Page Setup (2) 進階功能 + SEO]]></title>
     <url>%2F2019%2F02%2F13%2FGithub%20Page%20Setup(2)%20%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[建立留言板● 使用Disqus : ● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site” ● Website Name 中填入自己的網站名 ● 最後修改 blog/_config.yml: disqus: enable: true shortname: &lt;your-website-name&gt; count: true RSS訂閱● 安裝套件 npm install hexo-generator-feed ● 最後修改 blog/_config.yml，加入: feed: type: atom path: atom.xml limit: 20 文章預覽斷點● 利用做斷點 預覽可見 &lt;!--more--&gt; 預覽不可見]]></content>
       <categories>
         <category>setup</category>
       </categories>
