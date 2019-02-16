@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://liangsmfish.github.io/about/index.html</loc>
+    
+    <lastmod>2019-02-16T09:13:37.937Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://liangsmfish.github.io/2019/02/13/Github%20Page%20Setup(2)%20/</loc>
     
     <lastmod>2019-02-16T08:55:06.255Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://liangsmfish.github.io/2019/02/11/Git(1)/</loc>
     
     <lastmod>2019-02-12T17:59:52.128Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://liangsmfish.github.io/about/index.html</loc>
-    
-    <lastmod>2019-02-12T17:01:08.764Z</lastmod>
     
   </url>
   
