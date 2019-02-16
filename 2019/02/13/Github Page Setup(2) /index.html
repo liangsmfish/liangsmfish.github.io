@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Liang &#39;s blog">
 <meta property="og:description" content="瀏覽人次統計● 修改 theme/next/_config.yml : busuanzi_count:   enable: true   total_visitors: true   total_visitors_icon: user   total_views: true   total_views_icon: eye   post_views: true   post_views_icon:">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-16T08:55:06.255Z">
+<meta property="og:updated_time" content="2019-02-16T10:08:08.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Page Setup (2) 進階功能 + SEO">
 <meta name="twitter:description" content="瀏覽人次統計● 修改 theme/next/_config.yml : busuanzi_count:   enable: true   total_visitors: true   total_visitors_icon: user   total_views: true   total_views_icon: eye   post_views: true   post_views_icon:">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-16 16:55:06" itemprop="dateModified" datetime="2019-02-16T16:55:06+08:00">2019-02-16</time>
+                <time title="Modified: 2019-02-16 18:08:08" itemprop="dateModified" datetime="2019-02-16T18:08:08+08:00">2019-02-16</time>
               
             
           </span>
@@ -591,6 +591,48 @@ path: atom.xml
     background-position:80% 80%; 
 }
 </code></pre>
+<hr>
+<h3 id="加入Google-Analytics"><a href="#加入Google-Analytics" class="headerlink" title="加入Google Analytics"></a>加入Google Analytics</h3><p>● 先到 <a href="https://analytics.google.com/analytics/web" target="_blank" rel="noopener">Google Analytics</a> 首頁登或建立帳戶，新增一個資源後填入帳號名稱、網站名稱和網址，即可按下取得追蹤編號。</p>
+<p>● 修改 theme/next/_config.yml:</p>
+<pre><code class="bash">google_analytics: your-analytics-id
+</code></pre>
+<hr>
+<h3 id="加入sitemap"><a href="#加入sitemap" class="headerlink" title="加入sitemap"></a>加入sitemap</h3><p>● 安裝插件</p>
+<pre><code class="bash">npm install hexo-generator-sitemap --save
+</code></pre>
+<p>● 修改 theme/next/_config.yml，加入:</p>
+<pre><code class="bash">sitemap:
+  path: sitemap.xml
+</code></pre>
+<p>● 修改 theme/next/_config.yml:</p>
+<pre><code class="bash">url: your-website-name
+</code></pre>
+<p>● <code>hexo generate</code> 後，就能在 blog/public 中生成sitemap.xml，之後會提交給 Google</p>
+<h3 id="加入robots-txt"><a href="#加入robots-txt" class="headerlink" title="加入robots.txt"></a>加入robots.txt</h3><p>● 在blog/source中新建文件robots.txt </p>
+<pre><code class="bash">
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+
+Sitemap: http://your-website-name/sitemap.xml
+</code></pre>
+<p>● 最後再 <code>hexo generate</code> <code>hexo deploy</code> </p>
+<hr>
+<h3 id="注册Google-Search-Console"><a href="#注册Google-Search-Console" class="headerlink" title="注册Google Search Console"></a>注册Google Search Console</h3><p>● 在<a href="https://www.google.com/webmasters/" target="_blank" rel="noopener">Google Search Console</a> 中，新增你的網址。</p>
+<p>● 測試 robots.txt  </p>
+<p>● 提交 sitemap.xml</p>
+<p>● Google 抓取方式 ，將首頁跟想要曝光的網誌輸入至抓取，並提交至索引。</p>
+<p>● 輸入 site:your-website-name 就可以 Google 到我們的網站了</p>
 
       
     </div>
@@ -831,7 +873,7 @@ path: atom.xml
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#瀏覽人次統計"><span class="nav-number">1.</span> <span class="nav-text">瀏覽人次統計</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立留言板"><span class="nav-number">2.</span> <span class="nav-text">建立留言板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSS訂閱"><span class="nav-number">3.</span> <span class="nav-text">RSS訂閱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章預覽斷點"><span class="nav-number">4.</span> <span class="nav-text">文章預覽斷點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定背景圖片"><span class="nav-number">5.</span> <span class="nav-text">設定背景圖片</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#瀏覽人次統計"><span class="nav-number">1.</span> <span class="nav-text">瀏覽人次統計</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立留言板"><span class="nav-number">2.</span> <span class="nav-text">建立留言板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSS訂閱"><span class="nav-number">3.</span> <span class="nav-text">RSS訂閱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章預覽斷點"><span class="nav-number">4.</span> <span class="nav-text">文章預覽斷點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定背景圖片"><span class="nav-number">5.</span> <span class="nav-text">設定背景圖片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入Google-Analytics"><span class="nav-number">6.</span> <span class="nav-text">加入Google Analytics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入sitemap"><span class="nav-number">7.</span> <span class="nav-text">加入sitemap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入robots-txt"><span class="nav-number">8.</span> <span class="nav-text">加入robots.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册Google-Search-Console"><span class="nav-number">9.</span> <span class="nav-text">注册Google Search Console</span></a></li></ol></div>
             
 
           </div>
