@@ -115,18 +115,18 @@
 
 
 
-  <meta name="description" content="建立留言板● 使用Disqus : ● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site” ● Website Name 中填入自己的網站名 ● 最後修改 blog/_config.yml:  disqus: enable: true shortname: &amp;lt;your-website-name&amp;gt; count: true">
+  <meta name="description" content="瀏覽人次統計● 修改 theme/next/_config.yml : busuanzi_count:   enable: true   total_visitors: true   total_visitors_icon: user   total_views: true   total_views_icon: eye   post_views: true   post_views_icon:">
 <meta name="keywords" content="setup">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github Page Setup (2) 進階功能 + SEO">
 <meta property="og:url" content="https://liangsmfish.github.io/2019/02/13/Github Page Setup(2) /index.html">
 <meta property="og:site_name" content="Liang &#39;s blog">
-<meta property="og:description" content="建立留言板● 使用Disqus : ● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site” ● Website Name 中填入自己的網站名 ● 最後修改 blog/_config.yml:  disqus: enable: true shortname: &amp;lt;your-website-name&amp;gt; count: true">
+<meta property="og:description" content="瀏覽人次統計● 修改 theme/next/_config.yml : busuanzi_count:   enable: true   total_visitors: true   total_visitors_icon: user   total_views: true   total_views_icon: eye   post_views: true   post_views_icon:">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-16T08:12:03.333Z">
+<meta property="og:updated_time" content="2019-02-16T08:55:06.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Page Setup (2) 進階功能 + SEO">
-<meta name="twitter:description" content="建立留言板● 使用Disqus : ● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site” ● Website Name 中填入自己的網站名 ● 最後修改 blog/_config.yml:  disqus: enable: true shortname: &amp;lt;your-website-name&amp;gt; count: true">
+<meta name="twitter:description" content="瀏覽人次統計● 修改 theme/next/_config.yml : busuanzi_count:   enable: true   total_visitors: true   total_visitors_icon: user   total_views: true   total_views_icon: eye   post_views: true   post_views_icon:">
 
 
 
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-16 16:12:03" itemprop="dateModified" datetime="2019-02-16T16:12:03+08:00">2019-02-16</time>
+                <time title="Modified: 2019-02-16 16:55:06" itemprop="dateModified" datetime="2019-02-16T16:55:06+08:00">2019-02-16</time>
               
             
           </span>
@@ -541,20 +541,31 @@
       
 
       
-        <h3 id="建立留言板"><a href="#建立留言板" class="headerlink" title="建立留言板"></a>建立留言板</h3><p>● 使用<a href="https://disqus.com/" target="_blank" rel="noopener">Disqus </a>:</p>
+        <h3 id="瀏覽人次統計"><a href="#瀏覽人次統計" class="headerlink" title="瀏覽人次統計"></a>瀏覽人次統計</h3><p>● 修改 theme/next/_config.yml :</p>
+<pre><code class="bash">busuanzi_count:
+  <span class="built_in">enable</span>: <span class="literal">true</span>
+  total_visitors: <span class="literal">true</span>
+  total_visitors_icon: user
+  total_views: <span class="literal">true</span>
+  total_views_icon: eye
+  post_views: <span class="literal">true</span>
+  post_views_icon: eye
+</code></pre>
+<h3 id="建立留言板"><a href="#建立留言板" class="headerlink" title="建立留言板"></a>建立留言板</h3><p>● 使用<a href="https://disqus.com/" target="_blank" rel="noopener">Disqus </a>:</p>
 <p>● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site”</p>
 <p>● Website Name 中填入自己的網站名</p>
-<p>● 最後修改 blog/_config.yml: </p>
+<p>● 最後修改 theme/next/_config.yml: </p>
 <pre><code class="bash">disqus:
 <span class="built_in">enable</span>: <span class="literal">true</span>
 shortname: &lt;your-website-name&gt;
 count: <span class="literal">true</span>
 </code></pre>
 <a id="more"></a>
+<hr>
 <h3 id="RSS訂閱"><a href="#RSS訂閱" class="headerlink" title="RSS訂閱"></a>RSS訂閱</h3><p>● 安裝套件</p>
 <pre><code class="bash">npm install hexo-generator-feed
 </code></pre>
-<p>● 最後修改 blog/_config.yml，加入: </p>
+<p>● 修改 theme/next/_config.yml，加入: </p>
 <pre><code class="bash">feed:
 <span class="built_in">type</span>: atom
 path: atom.xml
@@ -565,6 +576,20 @@ path: atom.xml
 <pre><code class="bash">預覽可見
 &lt;!--more--&gt;
 預覽不可見
+</code></pre>
+<hr>
+<h3 id="設定背景圖片"><a href="#設定背景圖片" class="headerlink" title="設定背景圖片"></a>設定背景圖片</h3><p>● 把想當背景的照片放入 blog/themes/next/source/images</p>
+<p>● 接著修改 blog/themes/next/source/css/_custom/custom.sty ， 加入</p>
+<pre><code class="bash">body { background:url(/images/背景圖.jpg);}
+</code></pre>
+<p>● 我自己是使用 <a href="https://source.unsplash.com/" target="_blank" rel="noopener">unsplash</a> 這個網站的背景，該網站有更多背景的設置樣式。</p>
+<p>● 一樣修改 blog/themes/next/source/css/_custom/custom.sty，改成</p>
+<pre><code class="bash">body {
+    background:url(https://source.unsplash.com/1600x900/?water);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:80% 80%; 
+}
 </code></pre>
 
       
@@ -589,7 +614,7 @@ path: atom.xml
       
         <div class="post-tags">
           
-            <a href="/tags/setup/" rel="tag"><i class="fa fa-tag" style="font-size:24px"></i> setup</a>
+            <a href="/tags/setup/" rel="tag"><i class="fa fa-github" style="font-size:24px"></i> setup</a>
           
         </div>
       
@@ -806,7 +831,7 @@ path: atom.xml
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立留言板"><span class="nav-number">1.</span> <span class="nav-text">建立留言板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSS訂閱"><span class="nav-number">2.</span> <span class="nav-text">RSS訂閱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章預覽斷點"><span class="nav-number">3.</span> <span class="nav-text">文章預覽斷點</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#瀏覽人次統計"><span class="nav-number">1.</span> <span class="nav-text">瀏覽人次統計</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立留言板"><span class="nav-number">2.</span> <span class="nav-text">建立留言板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSS訂閱"><span class="nav-number">3.</span> <span class="nav-text">RSS訂閱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章預覽斷點"><span class="nav-number">4.</span> <span class="nav-text">文章預覽斷點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定背景圖片"><span class="nav-number">5.</span> <span class="nav-text">設定背景圖片</span></a></li></ol></div>
             
 
           </div>

@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-16 16:12:03" itemprop="dateModified" datetime="2019-02-16T16:12:03+08:00">2019-02-16</time>
+                <time title="Modified: 2019-02-16 16:55:06" itemprop="dateModified" datetime="2019-02-16T16:55:06+08:00">2019-02-16</time>
               
             
           </span>
@@ -534,10 +534,20 @@
 
       
         
-          <h3 id="建立留言板"><a href="#建立留言板" class="headerlink" title="建立留言板"></a>建立留言板</h3><p>● 使用<a href="https://disqus.com/" target="_blank" rel="noopener">Disqus </a>:</p>
+          <h3 id="瀏覽人次統計"><a href="#瀏覽人次統計" class="headerlink" title="瀏覽人次統計"></a>瀏覽人次統計</h3><p>● 修改 theme/next/_config.yml :</p>
+<pre><code class="bash">busuanzi_count:
+  <span class="built_in">enable</span>: <span class="literal">true</span>
+  total_visitors: <span class="literal">true</span>
+  total_visitors_icon: user
+  total_views: <span class="literal">true</span>
+  total_views_icon: eye
+  post_views: <span class="literal">true</span>
+  post_views_icon: eye
+</code></pre>
+<h3 id="建立留言板"><a href="#建立留言板" class="headerlink" title="建立留言板"></a>建立留言板</h3><p>● 使用<a href="https://disqus.com/" target="_blank" rel="noopener">Disqus </a>:</p>
 <p>● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site”</p>
 <p>● Website Name 中填入自己的網站名</p>
-<p>● 最後修改 blog/_config.yml: </p>
+<p>● 最後修改 theme/next/_config.yml: </p>
 <pre><code class="bash">disqus:
 <span class="built_in">enable</span>: <span class="literal">true</span>
 shortname: &lt;your-website-name&gt;

@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Github Page Setup (2) 進階功能 + SEO]]></title>
     <url>%2F2019%2F02%2F13%2FGithub%20Page%20Setup(2)%20%2F</url>
-    <content type="text"><![CDATA[建立留言板● 使用Disqus : ● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site” ● Website Name 中填入自己的網站名 ● 最後修改 blog/_config.yml: disqus: enable: true shortname: &lt;your-website-name&gt; count: true RSS訂閱● 安裝套件 npm install hexo-generator-feed ● 最後修改 blog/_config.yml，加入: feed: type: atom path: atom.xml limit: 20 文章預覽斷點● 利用做斷點 預覽可見 &lt;!--more--&gt; 預覽不可見]]></content>
+    <content type="text"><![CDATA[瀏覽人次統計● 修改 theme/next/_config.yml : busuanzi_count: enable: true total_visitors: true total_visitors_icon: user total_views: true total_views_icon: eye post_views: true post_views_icon: eye 建立留言板● 使用Disqus : ● 註冊一組帳密，在下一步中選擇 “I want to install Disqus on my site” ● Website Name 中填入自己的網站名 ● 最後修改 theme/next/_config.yml: disqus: enable: true shortname: &lt;your-website-name&gt; count: true RSS訂閱● 安裝套件 npm install hexo-generator-feed ● 修改 theme/next/_config.yml，加入: feed: type: atom path: atom.xml limit: 20 文章預覽斷點● 利用做斷點 預覽可見 &lt;!--more--&gt; 預覽不可見 設定背景圖片● 把想當背景的照片放入 blog/themes/next/source/images ● 接著修改 blog/themes/next/source/css/_custom/custom.sty ， 加入 body { background:url(/images/背景圖.jpg);} ● 我自己是使用 unsplash 這個網站的背景，該網站有更多背景的設置樣式。 ● 一樣修改 blog/themes/next/source/css/_custom/custom.sty，改成 body { background:url(https://source.unsplash.com/1600x900/?water); background-repeat: no-repeat; background-attachment:fixed; background-position:80% 80%; }]]></content>
       <categories>
         <category>setup</category>
       </categories>
